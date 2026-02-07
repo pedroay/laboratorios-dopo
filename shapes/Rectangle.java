@@ -59,11 +59,11 @@ public class Rectangle{
         draw();
     }
     
-    private void setXP(int nPosx){
+    public void setXP(int nPosx){  //esto lo volvi public para poder crear la cabeza en una posición
         xPosition = nPosx;
     }
     
-    private void setYP(int nPosy){
+    public void setYP(int nPosy){ //esto lo volvi public para poder crear la cabeza en una posición
         yPosition = nPosy;
     }
     
@@ -214,11 +214,11 @@ public class Rectangle{
         draw();
     }
 
-    /*
+    /**
      * Draw the rectangle with current specifications on screen.
      */
 
-    private void draw() {
+    public void draw() { //esto lo volvi public para poder crear la cabeza en una posición
         if(isVisible) {
             Canvas canvas = Canvas.getCanvas();
             canvas.draw(this, color,
@@ -228,7 +228,7 @@ public class Rectangle{
         }
     }
 
-    /*
+    /**
      * Erase the rectangle on screen.
      */
     private void erase(){
@@ -237,5 +237,22 @@ public class Rectangle{
             canvas.erase(this);
         }
     }
+    
+    /**
+     * Move the rectangle in n times
+     * @param int times in the canvas
+     */
+    public void walk(int times,int position){
+        if(times > 0){
+            int minimoves = position / times;
+            for(int i = 0;i<times;i++){
+                slowMoveHorizontal(minimoves);
+                draw();
+            }
+        }
+    }
+    
+    
 }
+
 
