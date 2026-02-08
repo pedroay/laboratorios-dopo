@@ -15,6 +15,7 @@ public class Snake
     private List<Rectangle> body;
     private String color;
     private boolean isOk;
+    private int lenghtSnake;
 
     /**
      * Constructor for objects of class Snake
@@ -25,20 +26,42 @@ public class Snake
         position.add(new int[] { row, column }); 
         visible = false;
         isOk = true;
-        color = color;
+        this.color = color;
         
         Rectangle head = new Rectangle();
+        head.changeSize(20,20);
         head.setYP(row * 20);
         head.setXP(column * 20);
         head.changeColor(color);
         body.add(head);
-   
+        makeVisible();
+        lenghtSnake=body.size();
+    }
+    
+    public int snakeSize(){
+        return lenghtSnake;
+    }
+    
+    public void makeVisible(){
+        visible=true;
+        for (int i =body.size() -1;i>= 0;i--){
+            Rectangle currRect = body.get(i);
+            currRect.makeVisible();
+        }
+    }
+    
+    public void makeInvisible(){
+        visible=false;
+        for (int i =body.size() -1;i>= 0;i--){
+            Rectangle currRect = body.get(i);
+            currRect.makeInvisible();
+            }
     }
     
     /**
      * Returns the position of the snake's head
      */
-    public int[] head  (){
+    public int[] head (){
         return position.get(0);
     }
     
@@ -48,6 +71,7 @@ public class Snake
     public int[] tail(){
         return position.get(position.size()-1);
     }
+    
     /**
      *  Moves the snake one position in the given direction.
      */
@@ -94,6 +118,10 @@ public class Snake
 
         position.add(0, new int[] {newRow, newCol});
         position.remove(position.size() - 1);
+        
+        if(visible){
+            makeVisible();
+        }
     }
     
     public void grow(char direction){
@@ -136,18 +164,22 @@ public class Snake
                 isOk = false;
                 return;
         }
-        
 
         position.add(0, new int[] {newRow, newCol});
         int[] tail = position.get(position.size() - 1);
         Rectangle newBody = new Rectangle();
-        newBody.changeColor(color);
+        newBody.changeSize(20,20);
         newBody.setXP(tail[1] * 20);
         newBody.setYP(tail[0] * 20);
+        newBody.changeColor(color);
+        body.add(newBody);
         
+        if(visible){
+            makeVisible();
+        }
     }
         
-        
+    
 }
 
 
