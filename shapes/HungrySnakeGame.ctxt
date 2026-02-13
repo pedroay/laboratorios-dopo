@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=HungrySnakeGame
+comment0.text=\r\n\ Class\ HungrySnakeGame.\r\n\ This\ class\ represents\ the\ main\ game\ logic\ for\ the\ Snake\ game.\r\n\ It\ is\ responsible\ for\ creating\ the\ board,\ the\ snake,\ the\ apple,\r\n\ and\ controlling\ movement,\ collisions,\ and\ game\ state.\r\n\ \r\n
+comment1.params=
+comment1.target=HungrySnakeGame()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ HungrySnakeGame.\r\n\ Initializes\ the\ game\ board,\ the\ apple,\ and\ the\ snake.\r\n
+comment2.params=referencia
+comment2.target=void\ moveSnake(char)
+comment2.text=\r\n\ Moves\ the\ snake\ in\ the\ given\ direction.\r\n\ This\ method\ checks\:\r\n\ -\ If\ the\ snake\ eats\ the\ apple\r\n\ -\ If\ the\ snake\ hits\ the\ borders\r\n\ -\ Otherwise,\ performs\ a\ normal\ movement\r\n\r\n\ @param\ referencia\ the\ movement\ direction\ ('U',\ 'D',\ 'L',\ 'R')\r\n
+comment3.params=
+comment3.target=void\ mensajeConsolacion()
+comment3.text=\r\n\ Displays\ a\ message\ indicating\ that\ the\ player\ has\ lost\ the\ game.\r\n
+comment4.params=
+comment4.target=void\ state()
+comment4.text=\r\n\ Prints\ the\ current\ game\ state\ to\ the\ console,\r\n\ specifically\ the\ current\ length\ of\ the\ snake.\r\n
+comment5.params=
+comment5.target=void\ reiniciar()
+comment5.text=\r\n\ Restarts\ the\ game\:\r\n\ -\ Hides\ the\ current\ snake\r\n\ -\ Resets\ the\ apple\ position\r\n\ -\ Creates\ a\ new\ snake\r\n
+numComments=6

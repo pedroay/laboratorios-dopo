@@ -59,6 +59,13 @@ public class Rectangle{
         draw();
     }
     
+    public int getXP(){  //esto lo volvi public para poder crear la cabeza en una posición
+        return xPosition;
+    }
+    public int getYP(){  //esto lo volvi public para poder crear la cabeza en una posición
+        return yPosition;
+    }
+    
     public void setXP(int nPosx){  //esto lo volvi public para poder crear la cabeza en una posición
         xPosition = nPosx;
     }
