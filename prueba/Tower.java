@@ -61,12 +61,12 @@
                 if (sizeTop > sizeNewCup){
                     setInside(top,newCup);
                     cups.push(newCup);
-                    if(posyTop < posyNewCup)top=newCup;
+                    setNewTop(this.top,newCup);
                 }
                 else if(sizeTop < sizeNewCup || topCover){
                     setAbove(top,newCup);
                     cups.push(newCup);
-                    top = newCup;
+                    setNewTop(this.top,newCup);
                 }
             }
             }
@@ -85,12 +85,19 @@
                 int insideBaseHeight = insideBase.getHeight();
                 boolean insideBaseCover = insideBase.isCovered();
                 if(insideBaseHeight > apilarHeight && !insideBaseCover){
-                    
                     setInside(insideBase,apilar);    
                 }
                 else if(insideBaseHeight <= apilarHeight || insideBaseCover){
                     setAbove(insideBase,apilar);
                 }
+            }
+        }
+        
+        private void setNewTop(Cup Top,Cup newCup){
+            int posyTop = top.getPosy();
+            int posyNewCup = newCup.getPosy();
+            if (posyTop > posyNewCup){
+                top = newCup;
             }
         }
         
@@ -116,45 +123,45 @@
         /**
          * Remueve y retorna la taza del tope
          */
-        public Cup popCup()
-        {   
-            boolean isEmpty=cups.isEmpty();
-            if (!isEmpty) {
-                isOK = true;
-                return cups.pop();
-            } else {
-                isOK = false;
-                return null;
+        public Cup popCup(){   
+            Cup tope = this.top;
+            this.top = null;
+            top = cups.get(0);
+            cups.remove(tope);
+            for( Cup c:cups){
+                int posyC=c.getPosy();
+                int posyTop = top.getPosy();
+                setNewTop(top,c);
+                
             }
+            tope.makeInvisible();
+            return tope;
         }
         
         /**
          * Remueve una taza específica por número
          */
-        public void removeCup(int i)
-        {
-            Stack<Cup> temp = new Stack<Cup>();
-            Cup removedCup = null;
-            boolean found = false;
-            boolean isEmpty=cups.isEmpty();
-            while (!isEmpty) {
-                Cup c = cups.pop();
-                int number=c.getNumber(); 
-                if (number != i) {
-                    temp.push(c);
-                } else {
-                    found = true;
-                    removedCup=c;
+        public void removeCup(int i){
+            Stack<Cup> temp ;
+            Cup rCup=null;
+            for(Cup c:cups){
+                int number = c.getNumber();
+                if (number ==i){
+                    rCup = c;
+                    break;
                 }
             }
-            boolean tIsEmpty=temp.isEmpty();
-            while (!tIsEmpty) {
-                cups.push(temp.pop());
-            } 
-            if (found && removedCup != null) {
-                removeLid(removedCup);
+            cups.remove(rCup);
+            temp = cups;
+            cups.clear();
+            top = null;
+            for(Cup c:temp){
+                int ci = c.getNumber();
+                c.setCupInside(null) ;
+                c.setCupAbove(null);
+                this.pushCup(ci);
             }
-            isOK = found;
+            
         }
         
         /**
