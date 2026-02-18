@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=Flota
+comment0.text=\r\n\ Representa\ una\ flota\ dentro\ del\ juego\ Batalla\ Naval.\r\n\ Una\ flota\ est\u00E1\ compuesta\ por\ m\u00E1quinas\ de\ guerra\ y\ marinos,\r\n\ y\ opera\ dentro\ de\ un\ tablero.\r\n
+comment1.params=tablero\ nombre\ codigo
+comment1.target=Flota(Tablero,\ java.lang.String,\ int)
+numComments=2

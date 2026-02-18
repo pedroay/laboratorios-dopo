@@ -1,0 +1,4 @@
+#BlueJ class context
+comment0.target=Posicion
+comment0.text=\r\n\ Representa\ una\ posici\u00F3n\ geogr\u00E1fica\ en\ el\ tablero.\r\n\ Una\ posici\u00F3n\ est\u00E1\ definida\ por\ una\ longitud\ y\ una\ latitud.\r\n
+numComments=1

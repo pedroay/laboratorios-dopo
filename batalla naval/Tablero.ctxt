@@ -1,0 +1,4 @@
+#BlueJ class context
+comment0.target=Tablero
+comment0.text=\r\n\ Representa\ el\ tablero\ del\ juego\ Batalla\ Naval.\r\n\ El\ tablero\ contiene\ las\ flotas\ que\ participan\ en\ el\ juego\r\n\ y\ define\ la\ ubicaci\u00F3n\ global\ del\ mundo.\r\n
+numComments=1

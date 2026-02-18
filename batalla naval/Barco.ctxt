@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=Barco
+comment0.text=\r\n\ Representa\ un\ barco\ de\ guerra\ dentro\ del\ juego\ Batalla\ Naval.\r\n
+comment1.params=num
+comment1.target=Barco(int)
+numComments=2
