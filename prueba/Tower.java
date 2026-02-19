@@ -1,5 +1,7 @@
     import java.util.Stack;
     import java.util.ArrayList;
+    import javax.swing.JOptionPane;
+
     
     /**
      * Write a description of class Tower here.
@@ -11,7 +13,6 @@
     {
         private int width;
         private int height;
-        private int minHeight;
         private int maxHeight;
         private boolean isVisible;
         private Stack<Cup> cups;
@@ -39,6 +40,9 @@
             for(Cup c : cups){
                 if(c.getNumber() == i){
                     isOK = false;
+                    if(isVisible){
+                        JOptionPane.showMessageDialog(null, "No se pudo hacer la acción de pushCup");
+                    }
                     return;
                 }
             }
@@ -68,9 +72,13 @@
                     cups.push(newCup);
                     setNewTop(this.top,newCup);
                 }
+                isOK = true;
             }
             }
-
+            
+        /**
+         * agrega una copa dentro de otra copa
+         */
         private void setInside(Cup base,Cup apilar){
             Cup insideBase = base.getCupInside();
             int posxApilar = apilar.getPosx();
@@ -91,8 +99,12 @@
                     setAbove(insideBase,apilar);
                 }
             }
+            isOK = true;
         }
         
+        /**
+         * avalua si toca cambiar el top y si si lo cambia
+         */
         private void setNewTop(Cup Top,Cup newCup){
             int posyTop = top.getPosy();
             int posyNewCup = newCup.getPosy();
@@ -101,6 +113,9 @@
             }
         }
         
+        /**
+         * coloca una copa encima de otra
+         */
         private void setAbove(Cup base, Cup apilar){
            base.setCupAbove(apilar);
            int posxApilar = apilar.getPosx();
@@ -109,84 +124,119 @@
            apilar.setPosition(posxApilar,posyBase-apilarHeight);
            
         }
-        private void towerHeight(Cup nCup){
-            for (Cup c:cups){
-                int cHeight = c.getHeight();
-                int nCHeight = nCup.getHeight();
-                if (cHeight > nCHeight){
-                    String cCover =c.getState();
-                    
-                }
-            }
-        }
      
         /**
          * Remueve y retorna la taza del tope
          */
-        public Cup popCup(){   
-            Cup tope = this.top;
-            this.top = null;
-            top = cups.get(0);
-            cups.remove(tope);
-            for( Cup c:cups){
-                int posyC=c.getPosy();
-                int posyTop = top.getPosy();
-                setNewTop(top,c);
+        public Cup popCup(){ 
+            if(!cups.isEmpty()){
+                Cup tope = this.top;
+                this.top = null;
+                top = cups.get(0);
+                cups.remove(tope);
                 
+                for( Cup c:cups){
+                    int posyC=c.getPosy();
+                    int posyTop = top.getPosy();
+                    setNewTop(top,c);
+                    
+                }
+                tope.makeInvisible();
+                isOK = true;
+                return tope;
             }
-            tope.makeInvisible();
-            return tope;
-        }
+            if(isVisible()){
+                JOptionPane.showMessageDialog(null, "No se pudo hacer la acción de popCup");
+ 
+            }
+            isOK = false;
+            return null;
+            }
         
         /**
          * Remueve una taza específica por número
          */
         public void removeCup(int i){
-            Stack<Cup> temp = new Stack();
-            Cup rCup = null;
-            for (Cup c:cups){
-                int cI = c.getNumber();
-                if(cI == i) {
-                   rCup = c;
-                   break;
+            if(!cups.isEmpty()){
+                Stack<Cup> temp = new Stack();
+                Cup rCup = null;
+                for (Cup c:cups){
+                    int cI = c.getNumber();
+                    if(cI == i) {
+                       rCup = c;
+                       break;
+                    }
                 }
+                if(rCup == null){
+                   if(isVisible())JOptionPane.showMessageDialog(null, "No se pudo hacer la acción de removeCup");
+                   isOK = false;
+                   return;
+                }
+                cups.remove(rCup);
+                for (Cup c: cups){
+                    c.setCupInside(null);
+                    c.setCupAbove(null);
+                    temp.push(c);
+                }
+                cups.clear();
+                top = null;
+                for(Cup t:temp){
+                    int tI = t.getNumber();
+                    pushCup(tI);
+                }
+                return;
             }
-            cups.remove(rCup);
-            for (Cup c: cups){
-                c.setCupInside(null);
-                c.setCupAbove(null);
-                temp.push(c);
+            if(isVisible()){
+                JOptionPane.showMessageDialog(null, "No se pudo hacer la acción de removeCup");
+ 
             }
-            cups.clear();
-            top = null;
-            for(Cup t:temp){
-                int tI = t.getNumber();
-                pushCup(tI);
-            }
+            isOK = false;
         }
         
         /**
          * Agrega una tapa al tope de la torre
          */
         public void pushLid(int i){
-            int topNumber = top.getNumber();
-            if(topNumber == i){
-                Lid topLid = top.getCover();
-                top.setState("Covered");
-                topLid.makeVisible();
+            if(top != null){
+                int topNumber = top.getNumber();
+                if(topNumber == i){
+                    Lid topLid = top.getCover();
+                    top.setState("Covered");
+                    topLid.makeVisible();
+                    isOK = true;
+                    return;
+                }
             }
+            if(isVisible()){
+                JOptionPane.showMessageDialog(null, "No se pudo hacer la acción de pushLid");
+ 
+            }
+            isOK = false;
         }
         
         /**
          * Remueve la tapa del tope
          */
         public void popLid(){
-            if(top.isCovered()){
-                Lid topLid = top.getCover();
-                topLid.makeInvisible();
-                top.setState("noCovered");
+            if (top!= null){
+                if(top.isCovered()){
+                    Lid topLid = top.getCover();
+                    topLid.makeInvisible();
+                    top.setState("noCovered");
+                    isOK = true;
+                    return;
+                }
+                if(isVisible()){
+                    JOptionPane.showMessageDialog(null, "No se pudo hacer la acción de popLid");
+ 
+                }
+                isOK = false;
             }
-            return;
+            if(isVisible()){
+                    JOptionPane.showMessageDialog(null, "No se pudo hacer la acción de popLid");
+ 
+                }
+                isOK = false;
         }
     
         
@@ -203,13 +253,13 @@
                 }
             }
             Lid rLid = rLidCup.getCover();
+            rLidCup.setState("covered");
         }
         
         /**
          * Ordena la torre de mayor a menor altura
          */
-        public void orderTower()
-        {
+        public void orderTower(){
             ArrayList<Cup> temp = new ArrayList<Cup>(cups);
             for (int i = 0; i < temp.size(); i++) {
                 for (int j = 0; j < temp.size() - 1; j++) {
@@ -221,10 +271,14 @@
                 }
             }
             cups.clear();
+            top = null;
             for (Cup c : temp) {
-                cups.push(c);
+                c.setCupInside(null);
+                c.setCupAbove(null);
+                int cI = c.getNumber();
+                pushCup(cI);
             }
-            System.out.println(cups);
+            makeVisible();
             isOK = true;
             }
         
@@ -234,23 +288,33 @@
         public void reverseTower()
         {
             Stack<Cup> temp = new Stack<Cup>();
+            top = null;
             while (!cups.isEmpty()) {
-                temp.push(cups.pop());
+                Cup c = cups.pop();
+                c.setCupInside(null);
+                c.setCupAbove(null);
+                temp.push(c);
             }
-            cups = temp;
+            for(Cup c: temp){
+                int cI = c.getNumber();
+                pushCup(cI);
+            }
             isOK = true;
         }
         
         /**
          * Retorna la altura total de elementos apilados
          */
-        public int getHeight()
-        {
-            int totalHeight = 0;
-            for (Cup c : cups) {
-                totalHeight += c.getHeight();
-            }        
-            return totalHeight;
+        public int height(){
+            int totalHeight;
+                if(top != null){
+                    totalHeight= 300- top.getPosy();
+                    isOK = true;
+                    return totalHeight;
+                
+            }
+            isOK = true;
+            return totalHeight = 0;
         }
         
         /**
@@ -275,43 +339,52 @@
         /**
          * Retorna matriz con tipo y número de elementos
          */
-        public String[][] stackingItems()
-        {
-            int totalElements = cups.size() + lids.size();
-            String[][] result = new String[totalElements][2];
-            
-            // Convertir stack a lista para iterar
-            ArrayList<Cup> cupList = new ArrayList<Cup>(cups);
-            ArrayList<Lid> lidList = new ArrayList<Lid>(lids);
-            
-            int index = 0;
-            
-            // Agregar tazas
-            for (Cup c : cupList) {
-                result[index][0] = "cup";
-                result[index][1] = String.valueOf(c.getNumber());
-                index++;
+        public String[][] stackingItems() {
+
+            ArrayList<String[]> temp = new ArrayList<>();
+        
+            // El stack ya mantiene orden base (0) → cima (size-1)
+            for (Cup c : cups) {
+        
+                // Agregar la copa
+                temp.add(new String[]{
+                    "cup",
+                    String.valueOf(c.getNumber())
+                });
+        
+                // Si está cubierta, agregar la tapa justo después
+                if (c.isCovered()) {
+                    Lid lid = c.getCover();
+                    temp.add(new String[]{
+                        "lid",
+                        String.valueOf(lid.getHeight())
+                    });
+                }
             }
-            
-            // Agregar tapas
-            for (Lid l : lidList) {
-                result[index][0] = "lid";
-                result[index][1] = String.valueOf(l.getHeight());
-                index++;
+        
+            // Convertir ArrayList a String[][]
+            String[][] result = new String[temp.size()][2];
+        
+            for (int i = 0; i < temp.size(); i++) {
+                result[i] = temp.get(i);
             }
-            
+        
             return result;
         }
+
         
         /**
          * Hace visible la torre
          */
         public void makeVisible()
         {   for(Cup c:cups){
+                int cPosy = c.getPosy();
+                if (cPosy >= 0){
                 c.makeVisible();
             }
+            }
             isVisible = true;
-        }
+            }
         
         /**
          * Hace invisible la torre
