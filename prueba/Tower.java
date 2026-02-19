@@ -48,7 +48,7 @@
                 top = newCup;
                 cups.push(newCup);
                 Lid lid = newCup.getCover();
-                pushLid(lid);
+                lids.push(lid);
                 isOK = true;
                 return;
             }
@@ -58,7 +58,7 @@
                 boolean topCover = top.isCovered();
                 int posyTop =top.getPosy();
                 int posyNewCup = newCup.getPosy();
-                if (sizeTop > sizeNewCup){
+                if (sizeTop > sizeNewCup && !topCover){
                     setInside(top,newCup);
                     cups.push(newCup);
                     setNewTop(this.top,newCup);
@@ -142,70 +142,67 @@
          * Remueve una taza específica por número
          */
         public void removeCup(int i){
-            Stack<Cup> temp ;
-            Cup rCup=null;
-            for(Cup c:cups){
-                int number = c.getNumber();
-                if (number ==i){
-                    rCup = c;
-                    break;
+            Stack<Cup> temp = new Stack();
+            Cup rCup = null;
+            for (Cup c:cups){
+                int cI = c.getNumber();
+                if(cI == i) {
+                   rCup = c;
+                   break;
                 }
             }
             cups.remove(rCup);
-            temp = cups;
+            for (Cup c: cups){
+                c.setCupInside(null);
+                c.setCupAbove(null);
+                temp.push(c);
+            }
             cups.clear();
             top = null;
-            for(Cup c:temp){
-                int ci = c.getNumber();
-                c.setCupInside(null) ;
-                c.setCupAbove(null);
-                this.pushCup(ci);
+            for(Cup t:temp){
+                int tI = t.getNumber();
+                pushCup(tI);
             }
-            
         }
         
         /**
          * Agrega una tapa al tope de la torre
          */
-        public void pushLid(Lid lid)
-        {
-            if (lid != null) {
-                lids.push(lid);
-                isOK = true;
-            } else {
-                isOK = false;
+        public void pushLid(int i){
+            int topNumber = top.getNumber();
+            if(topNumber == i){
+                Lid topLid = top.getCover();
+                top.setState("Covered");
+                topLid.makeVisible();
             }
         }
         
         /**
-         * Remueve y retorna la tapa del tope
+         * Remueve la tapa del tope
          */
-        public Lid popLid()
-        {
-            if (!lids.isEmpty()) {
-                isOK = true;
-                return lids.pop();
-            } else {
-                isOK = false;
-                return null;
+        public void popLid(){
+            if(top.isCovered()){
+                Lid topLid = top.getCover();
+                topLid.makeInvisible();
+                top.setState("noCovered");
             }
+            return;
         }
-        
-        public void removeLid(Cup removedCup){
-            Lid tapaDeLaTaza = removedCup.getCover();
-            removeLid(tapaDeLaTaza);
-        }
+    
         
         /**
          * Remueve una tapa del stack
          */
-        public void removeLid(Lid lid)
-        {
-            if (lids.remove(lid)) {
-                isOK = true;
-            } else {
-                isOK = false;
+        public void removeLid(int i){
+            Cup rLidCup = null;
+            for(Cup c : cups){
+                int cI = c.getNumber();
+                if(cI == i){
+                    rLidCup = c;
+                    break;
+                }
             }
+            Lid rLid = rLidCup.getCover();
         }
         
         /**
@@ -229,7 +226,7 @@
             }
             System.out.println(cups);
             isOK = true;
-        }
+            }
         
         /**
          * Invierte el orden de la torre
