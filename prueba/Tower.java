@@ -134,12 +134,10 @@
                 this.top = null;
                 top = cups.get(0);
                 cups.remove(tope);
-                
                 for( Cup c:cups){
                     int posyC=c.getPosy();
                     int posyTop = top.getPosy();
                     setNewTop(top,c);
-                    
                 }
                 tope.makeInvisible();
                 isOK = true;
@@ -147,7 +145,6 @@
             }
             if(isVisible()){
                 JOptionPane.showMessageDialog(null, "No se pudo hacer la acción de popCup");
- 
             }
             isOK = false;
             return null;
@@ -392,9 +389,9 @@
         public void makeInvisible()
         {
             for(Cup c:cups){
-            c.makeInvisible();
-            isVisible = false;
-        }
+                c.makeInvisible();
+                isVisible = false;
+            }
         }
         
         /**
@@ -402,7 +399,6 @@
          */
         public boolean isVisible(){   
             return isVisible;
-            
         }
         
         /**
