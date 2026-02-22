@@ -337,19 +337,14 @@
          * Retorna matriz con tipo y número de elementos
          */
         public String[][] stackingItems() {
-
-            ArrayList<String[]> temp = new ArrayList<>();
-        
-            // El stack ya mantiene orden base (0) → cima (size-1)
+             ArrayList<String[]> temp = new ArrayList<>();
             for (Cup c : cups) {
         
-                // Agregar la copa
                 temp.add(new String[]{
                     "cup",
                     String.valueOf(c.getNumber())
                 });
         
-                // Si está cubierta, agregar la tapa justo después
                 if (c.isCovered()) {
                     Lid lid = c.getCover();
                     temp.add(new String[]{
@@ -358,8 +353,6 @@
                     });
                 }
             }
-        
-            // Convertir ArrayList a String[][]
             String[][] result = new String[temp.size()][2];
         
             for (int i = 0; i < temp.size(); i++) {

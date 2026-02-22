@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=DataFrame
+comment1.params=data\ columns
+comment1.target=DataFrame(java.lang.String[][],\ java.lang.String[])
+comment2.params=
+comment2.target=int[]\ shape()
+comment2.text=\r\n\ shape\:\ retorna\ {n\u00FAmero\ de\ filas\ v\u00E1lidas,\ n\u00FAmero\ de\ columnas}\r\n
+comment3.params=rows\ column
+comment3.target=DataFrame\ loc(int[],\ java.lang.String)
+comment4.params=values
+comment4.target=DataFrame\ select(java.lang.String[])
+comment5.params=dfs\ axis
+comment5.target=DataFrame\ concat(DataFrame[],\ byte)
+comment6.params=rows
+comment6.target=java.lang.String\ head(int)
+comment7.params=df
+comment7.target=boolean\ equals(DataFrame)
+comment7.text=\r\n\ REVISA\ SI\ DATAFRAME\ ACTUAL\ CON\ EL\ DEL\ ARGUMENTO\ SON\ IGUALES\r\n
+comment8.params=o
+comment8.target=boolean\ equals(java.lang.Object)
+numComments=9

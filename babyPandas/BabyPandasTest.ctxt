@@ -1,0 +1,30 @@
+#BlueJ class context
+comment0.target=BabyPandasTest
+comment0.text=\ BabyPandasTest.java\r\n\ \ Pruebas\ unitarias\ para\ BabyPandas\ \u2013\ BDD\ (Ciclos\ 1,\ 2\ y\ 3).\r\n\r\n\ @author\ ESCUELA\ 2026-01\r\n
+comment1.params=
+comment1.target=void\ setUp()
+comment2.params=
+comment2.target=void\ shouldDefineVariable()
+comment2.text=define()\ crea\ la\ variable\ correctamente\ \u2192\ ok()\ \=\=\ true
+comment3.params=
+comment3.target=void\ shouldNotDefineEmptyName()
+comment3.text=define()\ con\ nombre\ vac\u00EDo\ \u2192\ ok()\ \=\=\ false
+comment4.params=
+comment4.target=void\ shouldAssignAndShape()
+comment4.text=assign()\ guarda\ el\ DataFrame\ y\ shape\ retorna\ {5,\ 3}
+comment5.params=
+comment5.target=void\ shouldNotAssignWithoutDefine()
+comment5.text=assign()\ sin\ define\ previo\ \u2192\ ok()\ \=\=\ false
+comment6.params=
+comment6.target=void\ shouldReturnCorrectShape()
+comment6.text=shape()\ sobre\ variable\ definida\ y\ asignada\ \u2192\ {5,3}\ y\ ok()\ \=\=\ true
+comment7.params=
+comment7.target=void\ shouldNotShapeUndefined()
+comment7.text=shape()\ sobre\ variable\ inexistente\ \u2192\ null\ y\ ok()\ \=\=\ false
+comment8.params=
+comment8.target=void\ shouldHeadReturnRows()
+comment8.text=head()\ retorna\ las\ primeras\ 2\ filas\ correctamente
+comment9.params=
+comment9.target=void\ shouldNotHeadUndefined()
+comment9.text=head()\ sobre\ variable\ sin\ asignar\ \u2192\ null\ y\ ok()\ \=\=\ false
+numComments=10
