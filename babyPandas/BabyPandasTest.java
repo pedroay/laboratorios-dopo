@@ -101,4 +101,70 @@ public class BabyPandasTest {
         assertNull(result);
         assertFalse(bp.ok());
     }
+    
+    /** assignUnary('r') selecciona filas correctamente → ok() == true */
+    @Test
+    public void shouldSelectRows() {
+        bp.define("df1");
+        bp.assign("df1", TABLA);
+        bp.define("df2");
+    
+        bp.assignUnary("df2", "df1", 'r', new String[]{"0", "2"});
+    
+        assertTrue(bp.ok());
+    
+        int[] shape = bp.shape("df2");
+        assertArrayEquals(new int[]{2, 3}, shape);
+    }
+    
+    /** assignUnary('c') selecciona columnas correctamente → ok() == true */
+    @Test
+    public void shouldSelectColumns() {
+        bp.define("df1");
+        bp.assign("df1", TABLA);
+        bp.define("df2");
+    
+        bp.assignUnary("df2", "df1", 'c', new String[]{"Nombre", "Edad"});
+    
+        assertTrue(bp.ok());
+    
+        int[] shape = bp.shape("df2");
+        assertArrayEquals(new int[]{5, 2}, shape);
+    }
+    
+    /** assignUnary('?') filtra filas correctamente → ok() == true */
+    @Test
+    public void shouldFilterRowsByCondition() {
+        bp.define("df1");
+        bp.assign("df1", TABLA);
+        bp.define("df2");
+    
+        bp.assignUnary("df2", "df1", '?', new String[]{"Nombre", "Ana"});
+    
+        assertTrue(bp.ok());
+    
+        int[] shape = bp.shape("df2");
+        assertNotNull(shape);
+    }
+    
+    /** assignUnary() sin variable destino definida → ok() == false */
+    @Test
+    public void shouldNotAssignUnaryIfDestinationUndefined() {
+        bp.define("df1");
+        bp.assign("df1", TABLA);
+    
+        bp.assignUnary("df2", "df1", 'r', new String[]{"0"});
+    
+        assertFalse(bp.ok());
+    }
+    
+    /** assignUnary() con variable fuente inexistente → ok() == false */
+    @Test
+    public void shouldNotAssignUnaryIfSourceUndefined() {
+        bp.define("df2");
+    
+        bp.assignUnary("df2", "noExiste", 'r', new String[]{"0"});
+    
+        assertFalse(bp.ok());
+    }
 }

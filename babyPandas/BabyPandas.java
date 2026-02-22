@@ -69,7 +69,7 @@ public class BabyPandas{
      * @param a Nombre de la variable
      * @return  int[]{filas, columnas} o null si la variable no existe / no tiene DataFrame
      */
-    public int[] getShape(String a) {
+    public int[] shape(String a) {
         DataFrame df = getDF(a);
         if (df == null) {
             lastOperationOk = false;
@@ -96,7 +96,81 @@ public class BabyPandas{
     //The parameters for 'c' are [column1, column2, ...]
     //The parameters for '?' are [valueColumn1, valueColumn2, ...]
 
-    public void assignUnary(String a, String b, char op, String [] parameters){
+        public void assignUnary(String a, String b, char op, String[] parameters) {
+            if (!variables.containsKey(a)) {
+                lastOperationOk = false;
+                return;
+            }
+            DataFrame source = getDF(b);
+            if (source == null) {
+                lastOperationOk = false;
+                return;
+            }
+
+            DataFrame result = null;
+
+            switch (op) {
+
+                case 'r': // Seleccionar filas por índice
+                    int[] indices = new int[parameters.length];
+                    for (int i = 0; i < parameters.length; i++) {
+                        indices[i] = Integer.parseInt(parameters[i].trim());
+                    }
+                    // loc con todas las columnas: usamos select de todas las columnas
+                    // pero como loc requiere una sola columna, hacemos la selección manualmente
+                    result = selectRows(source, indices);
+                    break;
+
+                case 'c': // Seleccionar columnas por nombre
+                    result = source.select(parameters);
+                    break;
+
+                case '?': // Filtrar por condición [columna, valor]
+                    result = source.filter(parameters);
+                    break;
+
+                default:
+                    lastOperationOk = false;
+                    return;
+            }
+
+            variables.put(a, result);
+            lastOperationOk = (result != null);
+        }
+        
+        /**
+     * Retorna un nuevo DataFrame con solo las filas indicadas por índice.
+     *
+     * @param source  DataFrame original
+     * @param indices Índices de las filas a seleccionar
+     * @return        Nuevo DataFrame con las filas seleccionadas o null si hay error
+     */
+    private DataFrame selectRows(DataFrame source, int[] indices) {
+    
+        if (source == null || indices == null) {
+            return null;
+        }
+    
+        String[][] originalData = source.getData();
+        String[] columns = source.getColumns();
+    
+        String[][] newData = new String[indices.length][columns.length];
+    
+        for (int i = 0; i < indices.length; i++) {
+    
+            int rowIndex = indices[i];
+    
+            // Validar índice fuera de rango
+            if (rowIndex < 0 || rowIndex >= originalData.length) {
+                return null;
+            }
+    
+            for (int j = 0; j < columns.length; j++) {
+                newData[i][j] = originalData[rowIndex][j];
+            }
+        }
+    
+        return new DataFrame(newData, columns);
     }
       
     

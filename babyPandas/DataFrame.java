@@ -21,7 +21,16 @@ public class DataFrame {
             }
         }
     }
-
+    
+    public String[] getColumns(){
+        return columns;
+    }
+    
+    public String[][] getData(){
+        return data;
+    }
+    
+    
     /**
      * shape: retorna {número de filas válidas, número de columnas}
      */ 
@@ -33,9 +42,54 @@ public class DataFrame {
         return null;
     }
 
+        /**
+     * Retorna un nuevo DataFrame con solo las columnas indicadas.
+     *
+     * @param values Nombres de las columnas a seleccionar
+     * @return Nuevo DataFrame con las columnas seleccionadas
+     *         o null si alguna columna no existe
+     */
     public DataFrame select(String[] values) {
-        return null;
+    
+        if (values == null || values.length == 0) {
+            return null;
+        }
+    
+        // Arreglo para guardar los índices reales de las columnas
+        int[] columnIndexes = new int[values.length];
+    
+        // Buscar cada columna solicitada
+        for (int i = 0; i < values.length; i++) {
+    
+            boolean found = false;
+    
+            for (int j = 0; j < columns.length; j++) {
+                if (columns[j].equals(values[i])) {
+                    columnIndexes[i] = j;
+                    found = true;
+                    break;
+                }
+            }
+    
+            // Si no se encontró alguna columna → error
+            if (!found) {
+                return null;
+            }
+        }
+    
+        // Crear nueva matriz con las mismas filas pero menos columnas
+        String[][] newData = new String[data.length][values.length];
+    
+        for (int i = 0; i < data.length; i++) {
+            for (int j = 0; j < columnIndexes.length; j++) {
+                newData[i][j] = data[i][columnIndexes[j]];
+            }
+        }
+    
+        // Crear nuevo DataFrame con las columnas seleccionadas
+        return new DataFrame(newData, values);
     }
+    
 
     public DataFrame concat(DataFrame[] dfs, byte axis) {
         return null;
@@ -92,4 +146,60 @@ public class DataFrame {
         if (o instanceof DataFrame) return equals((DataFrame) o);
         return false;
     }
+    
+    /**
+ * Filtra las filas cuyo valor en una columna específica
+ * sea igual al valor indicado.
+ *
+ * parameters[0] = nombre de la columna
+ * parameters[1] = valor a comparar
+ *
+ * @param parameters [columna, valor]
+ * @return Nuevo DataFrame filtrado o null si hay error
+ */
+public DataFrame filter(String[] parameters) {
+
+    if (parameters == null || parameters.length != 2) {
+        return null;
+    }
+
+    String columnName = parameters[0];
+    String value = parameters[1];
+
+    // Buscar índice de la columna
+    int columnIndex = -1;
+    for (int i = 0; i < columns.length; i++) {
+        if (columns[i].equals(columnName)) {
+            columnIndex = i;
+            break;
+        }
+    }
+
+    if (columnIndex == -1) {
+        return null; // columna no existe
+    }
+
+    // Contar filas que cumplen condición
+    int count = 0;
+    for (int i = 0; i < data.length; i++) {
+        if (data[i][columnIndex].equals(value)) {
+            count++;
+        }
+    }
+
+    // Crear nueva matriz
+    String[][] newData = new String[count][columns.length];
+    int newRow = 0;
+
+    for (int i = 0; i < data.length; i++) {
+        if (data[i][columnIndex].equals(value)) {
+            for (int j = 0; j < columns.length; j++) {
+                newData[newRow][j] = data[i][j];
+            }
+            newRow++;
+        }
+    }
+
+    return new DataFrame(newData, columns);
+}
 }

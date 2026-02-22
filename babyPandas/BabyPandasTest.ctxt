@@ -3,6 +3,21 @@ comment0.target=BabyPandasTest
 comment0.text=\ BabyPandasTest.java\r\n\ \ Pruebas\ unitarias\ para\ BabyPandas\ \u2013\ BDD\ (Ciclos\ 1,\ 2\ y\ 3).\r\n\r\n\ @author\ ESCUELA\ 2026-01\r\n
 comment1.params=
 comment1.target=void\ setUp()
+comment10.params=
+comment10.target=void\ shouldSelectRows()
+comment10.text=assignUnary('r')\ selecciona\ filas\ correctamente\ \u2192\ ok()\ \=\=\ true
+comment11.params=
+comment11.target=void\ shouldSelectColumns()
+comment11.text=assignUnary('c')\ selecciona\ columnas\ correctamente\ \u2192\ ok()\ \=\=\ true
+comment12.params=
+comment12.target=void\ shouldFilterRowsByCondition()
+comment12.text=assignUnary('?')\ filtra\ filas\ correctamente\ \u2192\ ok()\ \=\=\ true
+comment13.params=
+comment13.target=void\ shouldNotAssignUnaryIfDestinationUndefined()
+comment13.text=assignUnary()\ sin\ variable\ destino\ definida\ \u2192\ ok()\ \=\=\ false
+comment14.params=
+comment14.target=void\ shouldNotAssignUnaryIfSourceUndefined()
+comment14.text=assignUnary()\ con\ variable\ fuente\ inexistente\ \u2192\ ok()\ \=\=\ false
 comment2.params=
 comment2.target=void\ shouldDefineVariable()
 comment2.text=define()\ crea\ la\ variable\ correctamente\ \u2192\ ok()\ \=\=\ true
@@ -27,4 +42,4 @@ comment8.text=head()\ retorna\ las\ primeras\ 2\ filas\ correctamente
 comment9.params=
 comment9.target=void\ shouldNotHeadUndefined()
 comment9.text=head()\ sobre\ variable\ sin\ asignar\ \u2192\ null\ y\ ok()\ \=\=\ false
-numComments=10
+numComments=15
