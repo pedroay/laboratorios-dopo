@@ -2,11 +2,10 @@
 comment0.target=DataFrame
 comment1.params=data\ columns
 comment1.target=DataFrame(java.lang.String[][],\ java.lang.String[])
-comment10.params=o
-comment10.target=boolean\ equals(java.lang.Object)
-comment11.params=parameters
-comment11.target=DataFrame\ filter(java.lang.String[])
-comment11.text=\r\n\ Filtra\ las\ filas\ cuyo\ valor\ en\ una\ columna\ espec\u00EDfica\r\n\ sea\ igual\ al\ valor\ indicado.\r\n\r\n\ parameters[0]\ \=\ nombre\ de\ la\ columna\r\n\ parameters[1]\ \=\ valor\ a\ comparar\r\n\r\n\ @param\ parameters\ [columna,\ valor]\r\n\ @return\ Nuevo\ DataFrame\ filtrado\ o\ null\ si\ hay\ error\r\n
+comment1.text=\r\n\ crea\ el\ dataframe\r\n
+comment10.params=parameters
+comment10.target=DataFrame\ filter(java.lang.String[])
+comment10.text=\r\n\ Filtra\ las\ filas\ cuyo\ valor\ en\ una\ columna\ espec\u00EDfica\r\n\ sea\ igual\ al\ valor\ indicado.\r\n\r\n\ parameters[0]\ \=\ nombre\ de\ la\ columna\r\n\ parameters[1]\ \=\ valor\ a\ comparar\r\n
 comment2.params=
 comment2.target=java.lang.String[]\ getColumns()
 comment3.params=
@@ -14,16 +13,18 @@ comment3.target=java.lang.String[][]\ getData()
 comment4.params=
 comment4.target=int[]\ shape()
 comment4.text=\r\n\ shape\:\ retorna\ {n\u00FAmero\ de\ filas\ v\u00E1lidas,\ n\u00FAmero\ de\ columnas}\r\n
-comment5.params=rows\ column
-comment5.target=DataFrame\ loc(int[],\ java.lang.String)
-comment6.params=values
-comment6.target=DataFrame\ select(java.lang.String[])
-comment6.text=\r\n\ Retorna\ un\ nuevo\ DataFrame\ con\ solo\ las\ columnas\ indicadas.\r\n\r\n\ @param\ values\ Nombres\ de\ las\ columnas\ a\ seleccionar\r\n\ @return\ Nuevo\ DataFrame\ con\ las\ columnas\ seleccionadas\r\n\ \ \ \ \ \ \ \ \ o\ null\ si\ alguna\ columna\ no\ existe\r\n
-comment7.params=dfs\ axis
-comment7.target=DataFrame\ concat(DataFrame[],\ byte)
-comment8.params=rows
-comment8.target=java.lang.String\ head(int)
-comment9.params=df
-comment9.target=boolean\ equals(DataFrame)
-comment9.text=\r\n\ REVISA\ SI\ DATAFRAME\ ACTUAL\ CON\ EL\ DEL\ ARGUMENTO\ SON\ IGUALES\r\n
-numComments=12
+comment5.params=values
+comment5.target=DataFrame\ select(java.lang.String[])
+comment5.text=\r\n\ Retorna\ un\ nuevo\ DataFrame\ con\ solo\ las\ columnas\ indicadas.\r\n
+comment6.params=dfs\ axis
+comment6.target=DataFrame\ concat(DataFrame[],\ byte)
+comment6.text=\r\n\ Concatena\ este\ DataFrame\ con\ otros\ DataFrames.\r\n\ axis\ \=\ 0\ \u2192\ concatenar\ por\ filas\r\n\ axis\ \=\ 1\ \u2192\ concatenar\ por\ columnas\r\n
+comment7.params=rows
+comment7.target=java.lang.String\ head(int)
+comment7.text=\r\n\ Retorna\ las\ primeras\ \ filas\ del\ DataFrame,\ incluyendo\ los\ nombres\ de\ las\ columnas.\r\n\ el\ numeor\ de\ filas\ depende\ del\ argumento\ que\ se\ usa\r\n
+comment8.params=df
+comment8.target=boolean\ equals(DataFrame)
+comment8.text=\r\n\ REVISA\ SI\ DATAFRAME\ ACTUAL\ CON\ EL\ DEL\ ARGUMENTO\ SON\ IGUALES\r\n
+comment9.params=o
+comment9.target=boolean\ equals(java.lang.Object)
+numComments=11

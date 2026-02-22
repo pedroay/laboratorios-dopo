@@ -18,6 +18,20 @@ comment13.text=assignUnary()\ sin\ variable\ destino\ definida\ \u2192\ ok()\ \=
 comment14.params=
 comment14.target=void\ shouldNotAssignUnaryIfSourceUndefined()
 comment14.text=assignUnary()\ con\ variable\ fuente\ inexistente\ \u2192\ ok()\ \=\=\ false
+comment15.params=
+comment15.target=void\ shouldConcatByRows()
+comment15.text=assignBinary\ 'r'\ concatena\ dos\ DF\ por\ filas\ \u2192\ shape\ {10,\ 3}
+comment16.params=
+comment16.target=void\ shouldConcatByCols()
+comment16.text=assignBinary\ 'c'\ concatena\ dos\ DF\ por\ columnas\ \u2192\ shape\ {5,\ 6}
+comment17.params=
+comment17.target=void\ shouldNotConcatWithoutDefine()
+comment17.text=assignBinary\ con\ variable\ destino\ sin\ define\ \u2192\ ok()\ \=\=\ false
+comment18.params=
+comment18.target=void\ shouldNotConcatUndefinedSource()
+comment18.text=assignBinary\ con\ fuente\ inexistente\ \u2192\ ok()\ \=\=\ false
+comment19.params=
+comment19.target=void\ tearDown()
 comment2.params=
 comment2.target=void\ shouldDefineVariable()
 comment2.text=define()\ crea\ la\ variable\ correctamente\ \u2192\ ok()\ \=\=\ true
@@ -42,4 +56,4 @@ comment8.text=head()\ retorna\ las\ primeras\ 2\ filas\ correctamente
 comment9.params=
 comment9.target=void\ shouldNotHeadUndefined()
 comment9.text=head()\ sobre\ variable\ sin\ asignar\ \u2192\ null\ y\ ok()\ \=\=\ false
-numComments=15
+numComments=20

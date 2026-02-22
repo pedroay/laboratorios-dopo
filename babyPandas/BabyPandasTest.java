@@ -14,22 +14,18 @@ public class BabyPandasTest {
 
     // Datos compartidos de prueba
     private final String[][] TABLA = {
-        {"Nombre",  "Edad", "Profesion"},       // fila 0 = columnas
-        {"Lucía",   "28",   "Ingeniero"},        // fila 1
-        {"Carlos",  "35",   "Profesor"},         // fila 2
-        {"Ana",     "42",   "Doctor"},           // fila 3
-        {"Jorge",   "30",   "Arquitecto"},       // fila 4
-        {"Elena",   "25",   "Diseñador"},        // fila 5
+        {"Nombre",  "Edad", "Profesion"},     
+        {"Lucía",   "28",   "Ingeniero"},        
+        {"Carlos",  "35",   "Profesor"},         
+        {"Ana",     "42",   "Doctor"},           
+        {"Jorge",   "30",   "Arquitecto"},       
+        {"Elena",   "25",   "Diseñador"},        
     };
 
     @Before
     public void setUp() {
         bp = new BabyPandas();
     }
-
-    // =======================================================================
-    // CICLO 1 – Operaciones básicas: define, assign, shape, head
-    // =======================================================================
 
     /** define() crea la variable correctamente → ok() == true */
     @Test
@@ -87,7 +83,6 @@ public class BabyPandasTest {
         String result = bp.head("df1", 2);
         assertNotNull(result);
         assertTrue(bp.ok());
-        // Debe contener los nombres de las columnas y los primeros datos
         assertTrue(result.contains("Nombre"));
         assertTrue(result.contains("Lucía"));
         assertTrue(result.contains("Carlos"));
@@ -108,11 +103,8 @@ public class BabyPandasTest {
         bp.define("df1");
         bp.assign("df1", TABLA);
         bp.define("df2");
-    
         bp.assignUnary("df2", "df1", 'r', new String[]{"0", "2"});
-    
-        assertTrue(bp.ok());
-    
+        assertTrue(bp.ok());  
         int[] shape = bp.shape("df2");
         assertArrayEquals(new int[]{2, 3}, shape);
     }
@@ -122,12 +114,9 @@ public class BabyPandasTest {
     public void shouldSelectColumns() {
         bp.define("df1");
         bp.assign("df1", TABLA);
-        bp.define("df2");
-    
-        bp.assignUnary("df2", "df1", 'c', new String[]{"Nombre", "Edad"});
-    
-        assertTrue(bp.ok());
-    
+        bp.define("df2");  
+        bp.assignUnary("df2", "df1", 'c', new String[]{"Nombre", "Edad"});  
+        assertTrue(bp.ok());   
         int[] shape = bp.shape("df2");
         assertArrayEquals(new int[]{5, 2}, shape);
     }
@@ -138,11 +127,8 @@ public class BabyPandasTest {
         bp.define("df1");
         bp.assign("df1", TABLA);
         bp.define("df2");
-    
-        bp.assignUnary("df2", "df1", '?', new String[]{"Nombre", "Ana"});
-    
-        assertTrue(bp.ok());
-    
+        bp.assignUnary("df2", "df1", '?', new String[]{"Nombre", "Ana"});   
+        assertTrue(bp.ok());   
         int[] shape = bp.shape("df2");
         assertNotNull(shape);
     }
@@ -152,9 +138,7 @@ public class BabyPandasTest {
     public void shouldNotAssignUnaryIfDestinationUndefined() {
         bp.define("df1");
         bp.assign("df1", TABLA);
-    
-        bp.assignUnary("df2", "df1", 'r', new String[]{"0"});
-    
+        bp.assignUnary("df2", "df1", 'r', new String[]{"0"});  
         assertFalse(bp.ok());
     }
     
@@ -162,9 +146,52 @@ public class BabyPandasTest {
     @Test
     public void shouldNotAssignUnaryIfSourceUndefined() {
         bp.define("df2");
-    
-        bp.assignUnary("df2", "noExiste", 'r', new String[]{"0"});
-    
+        bp.assignUnary("df2", "noExiste", 'r', new String[]{"0"});  
         assertFalse(bp.ok());
+    }
+    
+    /** assignBinary 'r' concatena dos DF por filas → shape {10, 3} */
+    @Test
+    public void shouldConcatByRows() {
+        bp.define("df1");  bp.assign("df1", TABLA);
+        bp.define("df2");  bp.assign("df2", TABLA);
+        bp.define("df3");
+        bp.assignBinary("df3", "df1", 'r', "df2");
+        assertTrue(bp.ok());
+        assertArrayEquals(new int[]{10, 3}, bp.shape("df3"));
+    }
+
+    /** assignBinary 'c' concatena dos DF por columnas → shape {5, 6} */
+    @Test
+    public void shouldConcatByCols() {
+        bp.define("df1");  bp.assign("df1", TABLA);
+        bp.define("df2");  bp.assign("df2", TABLA);
+        bp.define("df3");
+        bp.assignBinary("df3", "df1", 'c', "df2");
+        assertTrue(bp.ok());
+        assertArrayEquals(new int[]{5, 6}, bp.shape("df3"));
+    }
+
+    /** assignBinary con variable destino sin define → ok() == false */
+    @Test
+    public void shouldNotConcatWithoutDefine() {
+        bp.define("df1");  bp.assign("df1", TABLA);
+        bp.define("df2");  bp.assign("df2", TABLA);
+        bp.assignBinary("df3", "df1", 'r', "df2");
+        assertFalse(bp.ok());
+    }
+
+    /** assignBinary con fuente inexistente → ok() == false */
+    @Test
+    public void shouldNotConcatUndefinedSource() {
+        bp.define("df1");  bp.assign("df1", TABLA);
+        bp.define("df3");
+        bp.assignBinary("df3", "df1", 'r', "dfNoExiste");
+        assertFalse(bp.ok());
+    }
+
+    @After
+    public void tearDown() {
+        bp = null;
     }
 }
