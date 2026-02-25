@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=DataFrameTest
+comment1.params=
+comment1.target=void\ setUp()
+comment1.text=\r\n\ Sets\ up\ the\ test\ fixture.\r\n\r\n\ Called\ before\ every\ test\ case\ method.\r\n
+comment2.params=
+comment2.target=void\ shouldCreateSmallestDataFrame()
+comment3.params=
+comment3.target=void\ shouldCreateOtherDataFrame()
+comment4.params=
+comment4.target=void\ shouldNotCreateBadDataFrame()
+comment5.params=
+comment5.target=void\ shouldPass()
+comment5.text=\r\n\ La\ prueba\ pasa\ porque\ el\ DataFrame\ tiene\ exactamente\ 1\ fila\ y\ el\ valor\ esperado\ coincide\ con\ el\ valor\ real.\ El\ assertEquals\ se\ cumple\ correctamente.\r\n
+comment6.params=
+comment6.target=void\ shouldFail()
+comment6.text=\r\n\ La\ prueba\ falla\ porque\ el\ DataFrame\ tiene\ 1\ fila,\ pero\ el\ assertEquals\ espera\ 5.\ El\ programa\ se\ ejecuta\ normalmente,\ pero\ el\ resultado\ no\ coincide\ con\ lo\ esperado,\ por\ eso\ es\ un\ Failure.\r\n
+comment7.params=
+comment7.target=void\ shouldErr()
+comment7.text=\r\n\ La\ prueba\ genera\ un\ error\ porque\ se\ intenta\ ejecutar\ un\ m\u00E9todo\ sobre\ un\ objeto\ null.\r\n\ \ \ \ Aqu\u00ED\ no\ falla\ un\ assert,\ sino\ que\ ocurre\ una\ excepci\u00F3n\ (NullPointerException),\ por\ eso\ JUnit\ lo\ reporta\ como\ Error.\r\n
+comment8.params=
+comment8.target=void\ tearDown()
+comment8.text=\r\n\ Tears\ down\ the\ test\ fixture.\r\n\r\n\ Called\ after\ every\ test\ case\ method.\r\n
+numComments=9

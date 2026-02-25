@@ -1,0 +1,33 @@
+#BlueJ class context
+comment0.target=BabyPandas
+comment0.text=\ BabyPandas.java\r\n\ \r\n\ @author\ ESCUELA\ 2026-01\r\n
+comment1.params=
+comment1.target=BabyPandas()
+comment10.params=variable\ rows
+comment10.target=java.lang.String\ head(java.lang.String,\ int)
+comment10.text=\r\n\ Retorna\ las\ primeras\ 'rows'\ filas\ del\ DataFrame\ almacenado\ en\ 'variable'.\r\n
+comment11.params=
+comment11.target=boolean\ ok()
+comment2.params=name
+comment2.target=void\ define(java.lang.String)
+comment2.text=\r\n\ Define\ una\ nueva\ variable\ con\ valor\ null\r\n\r\n\ @param\ name\ Nombre\ de\ la\ variable\ a\ definir\r\n
+comment3.params=a\ dataFrame
+comment3.target=void\ assign(java.lang.String,\ java.lang.String[][])
+comment3.text=\r\n\ Asigna\ un\ DataFrame\ a\ una\ variable\ existente.\r\n\ La\ primera\ fila\ de\ dataFrame\ se\ usa\ como\ columnas\ (header).\r\n\ Las\ filas\ siguientes\ son\ los\ datos.\r\n\r\n\r\n\ @param\ a\ \ \ \ \ \ \ \ \ Nombre\ de\ la\ variable\ destino\ (debe\ estar\ definida)\r\n\ @param\ dataFrame\ Matriz\ donde\ dataFrame[0]\ \=\ columnas,\ dataFrame[1..]\ \=\ datos\r\n
+comment4.params=a
+comment4.target=int[]\ shape(java.lang.String)
+comment4.text=\r\n\ Retorna\ las\ dimensiones\ {filas,\ columnas}\ del\ DataFrame\ almacenado\ en\ 'a'.\r\n\ @param\ a\ Nombre\ de\ la\ variable\r\n\ @return\ \ int[]{filas,\ columnas}\ o\ null\ si\ la\ variable\ no\ existe\ /\ no\ tiene\ DataFrame\r\n
+comment5.params=name
+comment5.target=DataFrame\ getDF(java.lang.String)
+comment6.params=
+comment6.target=java.util.HashMap\ getVariables()
+comment7.params=a\ b\ op\ parameters
+comment7.target=void\ assignUnary(java.lang.String,\ java.lang.String,\ char,\ java.lang.String[])
+comment7.text=Assigns\ the\ value\ of\ a\ unary\ operation\ to\ a\ variable\r\na\ \=\ b\ op\ parameters\r\nThe\ operator\ characters\ are\:\ 'r'\ select\ rows,\ 'c'\ select\ columns,\ '?'\ select\ condition\r\nThe\ parameters\ for\ 'r'\ are\ [index1,\ index2,\ ...]\r\nThe\ parameters\ for\ 'c'\ are\ [column1,\ column2,\ ...]\r\nThe\ parameters\ for\ '?'\ are\ [valueColumn1,\ valueColumn2,\ ...]\r\n
+comment8.params=source\ indices
+comment8.target=DataFrame\ selectRows(DataFrame,\ int[])
+comment8.text=\r\n\ Retorna\ un\ nuevo\ DataFrame\ con\ solo\ las\ filas\ indicadas\ por\ \u00EDndice.\r\n
+comment9.params=a\ b\ op\ c
+comment9.target=void\ assignBinary(java.lang.String,\ java.lang.String,\ char,\ java.lang.String)
+comment9.text=\r\n\ assignBinary()\ asigna\ a\ una\ variable\ el\ resultado\ de\ una\ operaci\u00F3n\ binaria\r\n\ entre\ dos\ DataFrames\ existentes.\r\n\r\n\ Operadores\ disponibles\:\r\n\ \ \ 'r'\ \u2192\ concatenar\ por\ filas\ (axis\ \=\ 0)\r\n\ \ \ 'c'\ \u2192\ concatenar\ por\ columnas\ (axis\ \=\ 1)\r\n
+numComments=12
