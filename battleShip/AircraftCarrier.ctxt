@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=AircraftCarrier
+comment1.params=
+comment1.target=boolean\ weekMachine()
+comment1.text=\r\n\ revisa\ si\ el\ portaviones\ es\ una\ week\ machine\ con\ la\ condcion\ de\ que\ si\ los\ pilotos\ principlales\ de\ su\ aviones\ no\ existe\ es\ una\ weekmachine\ o\ si\ tiene\r\n\ menos\ de\ 5\ navegantes\r\n\ @return\ is,\ booleano\ que\ nos\ dice\ si\ es\ una\ week\ machine\ o\ no\r\n
+numComments=2

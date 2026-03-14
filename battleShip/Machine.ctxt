@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Machine
+comment1.params=distancia\ minLat\ maxLat
+comment1.target=boolean\ canMoveLat(int,\ int,\ int)
+comment1.text=\r\n\ retorna\ un\ booleano\ preguntando\ a\ la\ location\ si\ de\ puede\ mover\ o\ no\r\n
+comment2.params=distancia\ minLon\ maxLon
+comment2.target=boolean\ canMoveLon(int,\ int,\ int)
+comment2.text=\r\n\ retorna\ un\ booleano\ preguntando\ a\ la\ location\ si\ de\ puede\ mover\ o\ no\r\n
+comment3.params=dLat\ dLon
+comment3.target=void\ moveDistance(int,\ int)
+comment3.text=\r\n\ mueve\ una\ distancia\ en\ logitud\ como\ en\ latirud\r\n\ @param\ dLat,\ la\ distancia\ que\ queremos\ que\ recorra\ en\ latitude\r\n\ @param\ dLon,\ la\ distancia\ que\ queremos\ que\ recorra\ en\ logitude\r\n
+comment4.params=lon\ lat
+comment4.target=boolean\ willBeDestroyed(int,\ int)
+comment4.text=\r\n\ willBeDestroyed\r\n\ revisa\ si\ el\ avion\ sera\ destruido\ coincidiendo\ con\ la\ posicion\ y\ si\ se\ encuentra\ en\ aire\r\n\ @param\ lon,\ longitude\ a\ donde\ ser\u00E1\ el\ ataque\r\n\ @param\ lat,\ latitude\ a\ donde\ ser\u00E1\ el\ ataque\r\n\ @return\ BeDestroyed\ booleano\ que\ cofirma\ si\ ser\u00E1\ destruido\ o\ no\r\n
+comment5.params=
+comment5.target=Position\ getLocation()
+comment6.params=
+comment6.target=boolean\ weekMachine()
+numComments=7

@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Fleet
+comment1.params=dLon\ dLat
+comment1.target=void\ advance(int,\ int)
+comment1.text=\r\n\ Moves\ all\ machines\ the\ defined\ distance.\ The\ world\ board\ is\ circular.\r\n\ @param\ dLon,\ advance\ in\ longitude\r\n\ param\ dLat,advance\ in\ latitude\r\n
+comment2.params=longitude\ latitude
+comment2.target=java.util.ArrayList\ machinesWillBeDestroyed(int,\ int)
+comment2.text=\r\n\ machinesWillBeDestroyed\r\n\ devuelve\ las\ maquinas\ que\ ser\u00E1n\ destruidas\ con\ un\ ataque\ a\ una\ posicion\r\n\ @param\ lon,\ longitude\ a\ donde\ ser\u00E1\ el\ ataque\r\n\ @param\ lat,\ latitude\ a\ donde\ ser\u00E1\ el\ ataque\r\n\ @return\ mWillBeDestroyed\ Arraylist\ de\ las\ maquinas\ que\ ser\u00E1n\ destruidas\r\n
+comment3.params=
+comment3.target=java.util.ArrayList\ weekMachines()
+comment3.text=\r\n\ Consults\ the\ weak\ machines\ of\ a\ fleet.\ A\ ship\ is\ weak\ if\ it\ has\ fewer\ than\ five\r\n\ \ sailors;\ an\ airplane,\ if\ it\ has\ no\ main\ pilot;\ and\ an\ aircraft\ carrier,\ if\ it\ is\r\n\ \ \ a\ weak\ ship\ or\ any\ of\ its\ airplanes\ in\ the\ air\ is\ weak.\r\n\ \ \ @return\ The\ weak\ machines\r\n
+numComments=4

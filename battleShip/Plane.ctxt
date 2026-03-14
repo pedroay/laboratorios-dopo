@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Plane
+comment1.params=lon\ lat
+comment1.target=boolean\ willBeDestroyed(int,\ int)
+comment1.text=\r\n\ willBeDestroyed\r\n\ revisa\ si\ el\ avion\ sera\ destruido\ coincidiendo\ con\ la\ posicion\ y\ si\ se\ encuentra\ en\ aire\r\n\ @param\ lon,\ longitude\ a\ donde\ ser\u00E1\ el\ ataque\r\n\ @param\ lat,\ latitude\ a\ donde\ ser\u00E1\ el\ ataque\r\n\ @return\ BeDestroyed\ booleano\ que\ cofirma\ si\ ser\u00E1\ destruido\ o\ no\r\n
+comment2.params=
+comment2.target=boolean\ weekMachine()
+comment2.text=\r\n\ revisa\ si\ el\ avion\ es\ una\ week\ machine\ con\ la\ condcion\ de\ que\ si\ el\ piloto\ principlal\ no\ existe\ es\ una\ weekmachine\r\n\ @return\ is,\ booleano\ que\ nos\ dice\ si\ es\ una\ week\ machine\ o\ no\r\n
+numComments=3

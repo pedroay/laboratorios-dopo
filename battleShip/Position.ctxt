@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=Position
+comment1.params=distancia\ minLat\ maxLat
+comment1.target=boolean\ canMoveLat(int,\ int,\ int)
+comment1.text=\r\n\ returna\ un\ booleano\ si\ se\ puede\ mover\ en\ latitude\ sumando\ su\ posiciona\ actual\ con\ la\ distancia\r\n\ @param\ distancia,\ distancia\ que\ se\ va\ a\ gregar\r\n\ @param\ minLat,\ latitud\ menor\ en\ el\ board\r\n\ @param\ maxLat,\ latitud\ mayor\ en\ el\ board\r\n\ @return\ can,\ boleano\ que\ nos\ dice\ si\ se\ puede\ mover\ o\ no\r\n
+comment2.params=distancia\ minLon\ maxLon
+comment2.target=boolean\ canMoveLon(int,\ int,\ int)
+comment2.text=\r\n\ returna\ un\ booleano\ si\ se\ puede\ mover\ en\ longitude\ sumando\ su\ posiciona\ actual\ con\ la\ distancia\r\n\ @param\ distancia,\ distancia\ que\ se\ va\ a\ gregar\r\n\ @param\ minLon,\ longitud\ menor\ en\ el\ board\r\n\ @param\ maxLon,\ longitud\ mayor\ en\ el\ board\r\n\ @return\ can,\ boleano\ que\ nos\ dice\ si\ se\ puede\ mover\ o\ no\r\n
+comment3.params=
+comment3.target=int\ getLat()
+comment4.params=
+comment4.target=int\ getLon()
+comment5.params=i
+comment5.target=void\ setLat(int)
+comment6.params=i
+comment6.target=void\ setLon(int)
+comment7.params=lon\ lat
+comment7.target=boolean\ samePosition(int,\ int)
+comment7.text=\r\n\ compara\ la\ posicion\ mandada,\ con\ la\ posicion\ actual\r\n\ @param\ lon,\ entero\ a\ comparar\ con\ longitude\r\n\ @param\ lat,\ entero\ a\ comparar\ con\ latitude\r\n\ @return\ coincide,\ booleano\ que\ confirma\ si\ lon\ y\ lat\ coincide\r\n
+numComments=8

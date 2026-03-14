@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Board
+comment1.params=
+comment1.target=int\ getMinLat()
+comment2.params=
+comment2.target=int\ getMaxLat()
+comment3.params=
+comment3.target=int\ getMaxLon()
+comment4.params=
+comment4.target=int\ getMinLon()
+comment5.params=longitude\ latitude
+comment5.target=java.util.ArrayList\ willBeDestroyed(int,\ int)
+comment5.text=\r\n\ revisa\ si\ hay\ una\ maquina\ en\ la\ poscion\ que\ se\ ataco\ y\ retorna\ booleano\ si\ lo\ destruyo\r\n\ @param\ longitude,\ longitud\ donde\ se\ ataca\r\n\ @param\ latitude,\ latitude\ donde\ se\ ataca\r\n\ @return\ mWillBeDestroyed,\ dice\ si\ va\ a\ ser\ destruido\r\n
+numComments=6

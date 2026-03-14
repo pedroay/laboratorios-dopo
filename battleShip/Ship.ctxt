@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Ship
+comment1.params=
+comment1.target=java.util.Collection\ getSailors()
+comment2.params=
+comment2.target=boolean\ weekMachine()
+comment2.text=\r\n\ retorna\ si\ es\ una\ weekMachine\ con\ la\ condicion\ de\ que\ tenga\ menos\ de\ 5\ marineros\r\n\ @return\ is,\ dice\ si\ es\ una\ weekMachine\r\n\ \r\n
+numComments=3
