@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Capsule extends Machine implements Nodriza 
+public class Capsule extends Machine implements Nodriza,SelfDestruction
 {
     // instance variables - replace the example below with your own
     private Nodriza nodriza;
@@ -63,5 +63,25 @@ public class Capsule extends Machine implements Nodriza
     
     public void instruction3(){
         
+    }
+    
+    public void selfDestruction(String reason){
+        if(nodriza.getDestructed()){
+            selfDestructed = true;
+            destructed = true;
+            if(isANodriza){
+                for(Capsule s:subordinados){
+                    s.selfDestruction(reason);
+                }
+            }
+        }
+    }
+    
+    public String getReason(){
+        return reason;
+    }
+    
+        public boolean getDestructed(){
+            return destructed;
     }
 }

@@ -57,4 +57,8 @@ public abstract class Machine {
     
     public abstract boolean weakMachine();
     
+    
+    public boolean getDestructed(){
+        return destructed;
+    }
 }

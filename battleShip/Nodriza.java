@@ -15,4 +15,6 @@ public interface Nodriza
     public void shareInstruction2();
     
     public void shareInstruction3();
+    
+    public boolean getDestructed();
 }

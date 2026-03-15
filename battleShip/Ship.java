@@ -31,7 +31,14 @@ public class Ship extends Machine implements Nodriza,SelfDestruction
     }
     
     public void selfDestruction(String reason){
-        
+        selfDestructed = true;
+        destructed = true;
+        this.reason = reason;
+        if(destructed && isANodriza){
+            for(Capsule s:subordinados){
+                s.selfDestruction(reason);
+            }
+        }
     }
     
     public void shareInstruction1(){
@@ -52,8 +59,7 @@ public class Ship extends Machine implements Nodriza,SelfDestruction
             }
     }
     
-    public void selfDestruction(String reason){
-        selfDestructed = true;
+    public boolean getDestructed(){
+            return destructed;
     }
-    
 }
