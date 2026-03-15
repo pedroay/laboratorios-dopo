@@ -22,4 +22,12 @@ public class Ship extends Machine implements Nodriza,SelfDestruction
         return is;
         
     }
+    
+    public void beANodriza(){
+        isANodriza = true;
+    }
+    
+    public void selfDestruction(String reason){
+        
+    }
 }

@@ -8,5 +8,5 @@
 
 public interface Nodriza
 {
-
+    public void beANodriza();
 }

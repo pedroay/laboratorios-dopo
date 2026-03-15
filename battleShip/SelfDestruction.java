@@ -8,5 +8,8 @@
 
 public interface SelfDestruction
 {
-
+    public void selfDestruction(String reason);
+    
+    public String getReason();
+    
 }

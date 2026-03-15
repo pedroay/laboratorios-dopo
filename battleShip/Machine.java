@@ -1,6 +1,10 @@
 public abstract class Machine {
 
     private Position location;
+    protected boolean selfDestruction;
+    protected String reason;
+    protected boolean isANodriza;
+    
     
     /**
      * retorna un booleano preguntando a la location si de puede mover o no

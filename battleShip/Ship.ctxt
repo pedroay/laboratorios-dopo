@@ -5,4 +5,6 @@ comment1.target=java.util.Collection\ getSailors()
 comment2.params=
 comment2.target=boolean\ weekMachine()
 comment2.text=\r\n\ retorna\ si\ es\ una\ weekMachine\ con\ la\ condicion\ de\ que\ tenga\ menos\ de\ 5\ marineros\r\n\ @return\ is,\ dice\ si\ es\ una\ weekMachine\r\n\ \r\n
-numComments=3
+comment3.params=
+comment3.target=void\ beANodriza()
+numComments=4
