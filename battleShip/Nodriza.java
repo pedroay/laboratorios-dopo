@@ -8,5 +8,11 @@
 
 public interface Nodriza
 {
-    public void beANodriza();
+    public abstract void beANodriza();
+    
+    public void shareInstruction1();
+    
+    public void shareInstruction2();
+    
+    public void shareInstruction3();
 }

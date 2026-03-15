@@ -1,9 +1,12 @@
+import java.util.ArrayList;
 public abstract class Machine {
 
     private Position location;
-    protected boolean selfDestruction;
+    protected boolean selfDestructed;
     protected String reason;
     protected boolean isANodriza;
+    protected ArrayList<Capsule> subordinados;
+    protected boolean destructed;
     
     
     /**
@@ -52,8 +55,6 @@ public abstract class Machine {
        return location; 
     }
     
-    public boolean weekMachine(){
-        return false;
-    }
+    public abstract boolean weakMachine();
     
 }

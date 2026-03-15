@@ -15,5 +15,5 @@ comment4.text=\r\n\ willBeDestroyed\r\n\ revisa\ si\ el\ avion\ sera\ destruido\
 comment5.params=
 comment5.target=Position\ getLocation()
 comment6.params=
-comment6.target=boolean\ weekMachine()
+comment6.target=boolean\ weakMachine()
 numComments=7
