@@ -5,6 +5,7 @@ import java.util.*;
 public class Forest{
     static private int SIZE=25;
     private Thing[][] places;
+    private List<Shadow> shadows;
     
     public Forest() {
         places=new Thing[SIZE][SIZE];
@@ -13,12 +14,13 @@ public class Forest{
                 places[r][c]=null;
             }
         }
+        shadows = new ArrayList<>(); 
         someThings();
     }
 
-    public int  getSize(){
-        return SIZE;
-    }
+            public int  getSize(){
+            return SIZE;
+        }
 
     public Thing getThing(int r,int c){
         return places[r][c];
@@ -30,7 +32,10 @@ public class Forest{
 
     public void someThings(){   
          Squirrel s = new Squirrel(this,10,10);
+         Squirrel s1 = new Squirrel(this,12,10);
+         Shadow s0 = new Shadow(this,24);
     }
+    
     
     public int neighborsEquals(int r, int c){
         int num=0;
@@ -50,7 +55,7 @@ public class Forest{
         return (inForest(r,c) && places[r][c]==null);
     }    
         
-    private boolean inForest(int r, int c){
+    public boolean inForest(int r, int c){
         return ((0<=r) && (r<SIZE) && (0<=c) && (c<SIZE));
     }
     
@@ -58,18 +63,22 @@ public class Forest{
      * seacrh in all the things in the forest and thing call the method ticTac
      */
     public void ticTac(){
-    ArrayList<Thing> cosasQueActuan = new ArrayList<>();
-    // 1. Recolectamos lo que hay actualmente
-    for(int r=0; r<SIZE; r++){
-        for(int c=0; c<SIZE; c++){
-            if(places[r][c] != null) cosasQueActuan.add(places[r][c]);
+        // 1. TicTac de objetos normales (tu código existente corregido)
+        // Recorre la matriz y llama a t.ticTac() de Árboles y Ardillas
+        for (int r = 0; r < SIZE; r++){
+            for (int c = 0; c < SIZE; c++){
+                if (places[r][c] != null){
+                    places[r][c].ticTac();
+                }
+            }
+        }
+        for (Shadow s : shadows) {
+            s.ticTac();
         }
     }
-    // 2. Les pedimos que actúen una sola vez
-    for(Thing t : cosasQueActuan){
-        t.ticTac();
+    public void addShadow(int row) {
+        shadows.add(new Shadow(this, row));
     }
-}
-    
+
     
 }

@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Shadow
+comment1.params=forest\ row
+comment1.target=Shadow(Forest,\ int)
+comment2.params=
+comment2.target=void\ ticTac()
+comment3.params=
+comment3.target=java.awt.Color\ getColor()
+comment4.params=
+comment4.target=int\ getRow()
+numComments=5
