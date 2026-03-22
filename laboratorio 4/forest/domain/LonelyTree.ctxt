@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=LonelyTree
+comment1.params=forest\ row\ column
+comment1.target=LonelyTree(Forest,\ int,\ int)
+comment2.params=
+comment2.target=void\ ticTac()
+comment3.params=
+comment3.target=boolean\ hasCompanyInRowOrColumn()
+comment4.params=
+comment4.target=void\ updateColor()
+numComments=5

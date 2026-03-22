@@ -1,7 +1,6 @@
     package domain;
     import java.awt.Color;
     
-    /*No olviden adicionar la documentacion*/
     public interface Thing{
       public static final int SQUARE = 2;
       public static final int ROUND = 1;

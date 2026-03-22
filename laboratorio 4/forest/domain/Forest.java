@@ -18,9 +18,9 @@ public class Forest{
         someThings();
     }
 
-            public int  getSize(){
-            return SIZE;
-        }
+    public int  getSize(){
+        return SIZE;
+    }
 
     public Thing getThing(int r,int c){
         return places[r][c];
@@ -31,9 +31,12 @@ public class Forest{
     }
 
     public void someThings(){   
-         Squirrel s = new Squirrel(this,10,10);
-         Squirrel s1 = new Squirrel(this,12,10);
-         Shadow s0 = new Shadow(this,24);
+         Squirrel sq = new Squirrel(this,10,10);
+         Squirrel sq1 = new Squirrel(this,12,10);
+         Shadow so0 = new Shadow(this,24);
+         Shadow so1 = new Shadow(this,10);
+         LonelyTree lt1 = new LonelyTree(this, 5, 5);
+        LonelyTree lt2 = new LonelyTree(this, 5, 10);
     }
     
     
@@ -63,8 +66,6 @@ public class Forest{
      * seacrh in all the things in the forest and thing call the method ticTac
      */
     public void ticTac(){
-        // 1. TicTac de objetos normales (tu código existente corregido)
-        // Recorre la matriz y llama a t.ticTac() de Árboles y Ardillas
         for (int r = 0; r < SIZE; r++){
             for (int c = 0; c < SIZE; c++){
                 if (places[r][c] != null){
@@ -76,9 +77,12 @@ public class Forest{
             s.ticTac();
         }
     }
-    public void addShadow(int row) {
-        shadows.add(new Shadow(this, row));
+    
+    public void addShadow(Shadow shadow) {
+        shadows.add(shadow);
     }
 
-    
+    public List<Shadow> getShadows() {
+        return shadows;
+    }
 }

@@ -101,5 +101,12 @@ class PhotoForest extends JPanel{
                 }
             }
         }
+        for (Shadow s : theForest.getShadows()) {
+            g.setColor(s.getColor()); // Color negro o el que tenga
+            int f = s.getRow();
+            for (int c = 0; c < theForest.getSize(); c++) {
+                g.fillOval(gui.SIDE * c + 1, gui.SIDE * f + 1, gui.SIDE - 2, gui.SIDE - 2);
+            }
+        }
     }
 }
