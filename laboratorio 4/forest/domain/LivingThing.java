@@ -43,4 +43,7 @@ public abstract class LivingThing{
         return true;
     }  
     
+    public int getYear(){
+        return years;
+    }
 }

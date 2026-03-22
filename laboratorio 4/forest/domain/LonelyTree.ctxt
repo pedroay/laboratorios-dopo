@@ -4,8 +4,11 @@ comment1.params=forest\ row\ column
 comment1.target=LonelyTree(Forest,\ int,\ int)
 comment2.params=
 comment2.target=void\ ticTac()
+comment2.text=\r\n\ Ejecuta\ un\ ciclo\ de\ comportamiento\ del\ objeto\ basado\ en\ el\ tiempo\ (tictac).\r\n\ \r\n\ Incrementa\ el\ contador\ tictac\ en\ cada\ invocaci\u00F3n.\ Cuando\ tictac\ %\ 4\ \=\=\ 1,\r\n\ se\ incrementa\ la\ edad\ (years).\r\n\ \r\n\ Cuando\ tictac\ %\ 4\ \=\=\ 3,\ primero\ verifica\ si\ existe\ compa\u00F1\u00EDa\ en\ la\ misma\r\n\ fila\ o\ columna\ mediante\ hasCompanyInRowOrColumn()\:\r\n\ si\ es\ as\u00ED,\ el\ objeto\ muere.\ Si\ no,\ intenta\ moverse\ usando\ step();\r\n\ si\ el\ movimiento\ falla,\ tambi\u00E9n\ muere.\r\n\ \r\n\ Finalmente,\ actualiza\ el\ color\ del\ objeto\ llamando\ a\ updateColor().\r\n
 comment3.params=
 comment3.target=boolean\ hasCompanyInRowOrColumn()
+comment3.text=\r\n\ Verifica\ si\ existe\ otro\ objeto\ del\ tipo\ Tree\ en\ la\ misma\ fila\ o\ columna.\r\n\ \r\n\ Recorre\ todas\ las\ posiciones\ de\ la\ fila\ actual\ (excepto\ la\ propia)\ y\ luego\r\n\ todas\ las\ posiciones\ de\ la\ columna\ actual\ (tambi\u00E9n\ excluyendo\ la\ propia).\r\n\ \r\n\ Si\ encuentra\ al\ menos\ un\ objeto\ de\ tipo\ Tree\ en\ alguna\ de\ estas\ posiciones,\r\n\ retorna\ true.\ En\ caso\ contrario,\ retorna\ false.\r\n\ \r\n\ Este\ m\u00E9todo\ se\ utiliza\ para\ detectar\ la\ presencia\ de\ compa\u00F1\u00EDa\ en\ l\u00EDnea\ recta\r\n\ dentro\ del\ entorno.\r\n
 comment4.params=
 comment4.target=void\ updateColor()
+comment4.text=\r\n\ Actualiza\ el\ color\ del\ objeto\ seg\u00FAn\ su\ nivel\ de\ energ\u00EDa.\r\n\ \r\n\ Obtiene\ el\ valor\ de\ energ\u00EDa\ mediante\ getEnergy()\ y\ asigna\ un\ color\r\n\ en\ funci\u00F3n\ de\ rangos\ definidos.\ A\ mayor\ energ\u00EDa,\ el\ color\ es\ m\u00E1s\ claro;\r\n\ a\ menor\ energ\u00EDa,\ el\ color\ es\ m\u00E1s\ oscuro.\r\n\ \r\n\ Este\ m\u00E9todo\ permite\ representar\ visualmente\ el\ estado\ de\ energ\u00EDa\r\n\ del\ objeto\ a\ trav\u00E9s\ de\ diferentes\ tonalidades.\r\n
 numComments=5

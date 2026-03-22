@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Lake
+comment1.params=forest\ row\ column
+comment1.target=Lake(Forest,\ int,\ int)
+comment2.params=
+comment2.target=void\ ticTac()
+comment2.text=\r\n\ Ejecuta\ un\ ciclo\ b\u00E1sico\ de\ actualizaci\u00F3n\ del\ objeto.\r\n\ \r\n\ Incrementa\ el\ contador\ tictac\ y\ actualiza\ el\ color\ mediante\r\n\ el\ m\u00E9todo\ updateColor().\r\n\ \r\n\ A\ diferencia\ de\ otras\ implementaciones,\ este\ m\u00E9todo\ no\ realiza\r\n\ movimiento,\ reproducci\u00F3n\ ni\ cambios\ en\ la\ edad.\r\n
+comment3.params=
+comment3.target=void\ updateColor()
+comment3.text=\r\n\ Actualiza\ el\ color\ del\ objeto\ de\ forma\ c\u00EDclica\ seg\u00FAn\ el\ valor\ de\ tictac.\r\n\ \r\n\ El\ color\ cambia\ cada\ vez\ que\ se\ invoca\ el\ m\u00E9todo,\ siguiendo\ un\ ciclo\ de\ 4\ estados\r\n\ basado\ en\ el\ residuo\ de\ tictac\ %\ 4.\ Cada\ estado\ corresponde\ a\ una\ tonalidad\ distinta\r\n\ de\ color.\r\n\ \r\n\ Este\ m\u00E9todo\ permite\ representar\ visualmente\ el\ paso\ del\ tiempo\ o\ el\ estado\r\n\ del\ objeto\ mediante\ variaciones\ de\ color.\r\n
+comment4.params=
+comment4.target=java.awt.Color\ getColor()
+comment5.params=
+comment5.target=int\ shape()
+comment6.params=
+comment6.target=boolean\ isOnlyThing()
+comment7.params=
+comment7.target=int\ getRow()
+comment8.params=
+comment8.target=int\ getColumn()
+numComments=9

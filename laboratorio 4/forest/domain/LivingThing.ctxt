@@ -12,4 +12,6 @@ comment3.text=Returns\ the\ energy\r\n\ \ \ \ @return\ \r\n
 comment4.params=
 comment4.target=boolean\ isLivingThing()
 comment4.text=It's\ an\ LivingThing\r\n
-numComments=5
+comment5.params=
+comment5.target=int\ getYear()
+numComments=6

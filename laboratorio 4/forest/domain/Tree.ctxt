@@ -18,7 +18,7 @@ comment5.target=int\ shape()
 comment5.text=Returns\ the\ shape\r\n\ \ \ \ @return\ \r\n
 comment6.params=
 comment6.target=void\ ticTac()
-comment6.text=ticTac\r\n
+comment6.text=\r\n\ Ejecuta\ un\ ciclo\ de\ actualizaci\u00F3n\ del\ objeto\ usando\ un\ contador\ interno.\r\n\ \r\n\ Incrementa\ el\ valor\ de\ tictac\ y\ cambia\ el\ color\ de\ forma\ c\u00EDclica\ cada\ 4\ pasos\r\n\ entre\ PINK,\ GREEN,\ ORANGE\ y\ GRAY.\r\n\ \r\n\ Cuando\ tictac\ %\ 4\ \=\=\ 1,\ se\ incrementa\ la\ edad\ (years).\r\n\ \r\n\ Cuando\ tictac\ %\ 4\ \=\=\ 3,\ se\ intenta\ realizar\ una\ acci\u00F3n\ mediante\ step()\:\r\n\ si\ esta\ falla,\ el\ objeto\ deja\ de\ existir\ llamando\ a\ die().\r\n\ \r\n\ Este\ m\u00E9todo\ simula\ el\ comportamiento\ del\ objeto\ a\ lo\ largo\ del\ tiempo.\r\n
 comment7.params=
 comment7.target=void\ die()
 comment7.text=Die\r\n

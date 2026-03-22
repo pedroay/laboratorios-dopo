@@ -60,7 +60,18 @@ public class Tree extends LivingThing implements Thing{
 
     
     
-    /**ticTac
+    /**
+     * Ejecuta un ciclo de actualización del objeto usando un contador interno.
+     * 
+     * Incrementa el valor de tictac y cambia el color de forma cíclica cada 4 pasos
+     * entre PINK, GREEN, ORANGE y GRAY.
+     * 
+     * Cuando tictac % 4 == 1, se incrementa la edad (years).
+     * 
+     * Cuando tictac % 4 == 3, se intenta realizar una acción mediante step():
+     * si esta falla, el objeto deja de existir llamando a die().
+     * 
+     * Este método simula el comportamiento del objeto a lo largo del tiempo.
      */
     public void ticTac(){
         tictac++;
