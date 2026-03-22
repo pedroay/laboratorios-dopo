@@ -50,11 +50,11 @@ public class LonelyTree extends Tree {
 
     private void updateColor() {
         int energy = getEnergy();
-        if (energy >= 80) color = new Color(0, 180, 0);
-        else if (energy >= 60) color = new Color(80, 160, 0);
-        else if (energy >= 40) color = new Color(160, 140, 0);
-        else if (energy >= 20) color = new Color(200, 100, 0);
-        else color = new Color(220, 50, 0);
+        if (energy >= 80) color = new Color(173, 216, 230);  
+        else if (energy >= 60) color = new Color(100, 149, 237);
+        else if (energy >= 40) color = new Color(123, 104, 238); 
+        else if (energy >= 20) color = new Color(148, 0, 211);  
+        else color = new Color(75, 0, 130);                       
     }
 
 }
