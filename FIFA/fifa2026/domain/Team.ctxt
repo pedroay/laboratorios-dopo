@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=Team
+comment1.params=name\ minutes\ position\ manager\ uniform
+comment1.target=Team(java.lang.String,\ int,\ char,\ java.lang.String,\ java.lang.String)
+comment1.text=\r\n\ Constructs\ a\ new\ Team\r\n\ @param\ name\r\n\ @param\ type\r\n
+comment2.params=c
+comment2.target=void\ addPlayer(Player)
+comment2.text=\r\n\ Add\ a\ new\ Player\r\n\ @param\ c\r\n
+comment3.params=
+comment3.target=int\ marketValue()
+comment3.text=\r\n\ Return\ de\ value\ of\ the\ team\ based\ in\ the\ sum\ of\ the\ market\ value\ of\ his\ players\r\n\ @return\ value\:\ return\ all\ the\ vale\ of\ a\ team\r\n
+comment4.params=
+comment4.target=int\ expectedMarketValue()
+comment4.text=\r\n\ Returns\ the\ expectet\ Market\ Value\ \r\n\ @return\r\n\ @throws\ FifaException,\ if\ any\ marker\ value\ or\ minutes\ is\ unknown\r\n
+comment5.params=defaultMarketValue\ defaultMinutes
+comment5.target=int\ defaultMarkedValue(int,\ int)
+comment5.text=\r\n\ Returns\ the\ Marked\ Value\ using\ default\ values\ \r\n\ @return\r\n\ @throws\ FifaException,\ if\ the\ resistance\ cannot\ be\ calculate\r\n
+comment6.params=
+comment6.target=int\ bestMarkedValue()
+comment6.text=\r\n\ Returns\ the\ best\ possible\ Market\ Value\ of\ the\ team.\r\n\ @return\ weighted\ market\ value\ using\ the\ best\ known\ values\ for\ unknown\ data\r\n\ @throws\ FifaException\ IMPOSSIBLE\ if\ total\ minutes\ is\ zero\r\n
+comment7.params=
+comment7.target=java.lang.String\ data()
+numComments=8

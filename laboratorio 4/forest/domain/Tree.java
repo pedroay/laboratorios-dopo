@@ -10,7 +10,7 @@ public class Tree extends LivingThing implements Thing{
     
     protected int row,column;    
     protected Color color;
-    private int season; //[spring, summer, autumn, winter]
+    private int season;
     private int tictac;
     
     /**Create a new Tree(<b>row,column</b>) in the forest <b>forest</b>..
