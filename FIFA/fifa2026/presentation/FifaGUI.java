@@ -234,13 +234,18 @@ public class FifaGUI extends JFrame{
     
     private void  actionAdd(){
         try{
-        if (players.getText().trim().equals("")){
-            fifa.addPlayer(name.getText(), minutes.getText(), position.getText(),value.getText(), managerClub.getText());
-        }else{ 
-            fifa.addTeam(name.getText(), minutes.getText(), position.getText(), managerClub.getText(), uniform.getText(), players.getText());
-        }
-        }catch(FifaException e){
-            
+            if (players.getText().trim().equals("")){
+                fifa.addPlayer(name.getText(), minutes.getText(), position.getText(), value.getText(), managerClub.getText());
+            }else{ 
+                fifa.addTeam(name.getText(), minutes.getText(), position.getText(), managerClub.getText(), uniform.getText(), players.getText());
+            }
+            JOptionPane.showMessageDialog(this, "Participante agregado exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        } catch(FifaException e){
+            // Caso (i),(ii),(iii),(iv): mostrar el error al usuario
+            JOptionPane.showMessageDialog(this, "Error al adicionar: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        } catch(Exception e){
+            // Cualquier otro error inesperado
+            JOptionPane.showMessageDialog(this, "Error inesperado: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     
     }

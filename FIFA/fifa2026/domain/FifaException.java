@@ -27,6 +27,10 @@ public class FifaException extends Exception
     
     public static final String ALREADY_EXISTS = "el participante ya existe";
     
+    public static final String WRONG_VALUE = "valor fuera de rango (debe ser mayor que cero)";
+    
+    public static final String EMPTY_FIELD = "campo obligatorio vacío";
+    
     public FifaException(String message){
          super(message);
     }

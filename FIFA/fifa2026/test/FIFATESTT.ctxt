@@ -1,8 +1,8 @@
 #BlueJ class context
-comment0.target=FIFATest
+comment0.target=FIFATESTT
 comment0.text=\r\n\ The\ test\ class\ FIFATest.\r\n\r\n\ @author\ \ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
-comment1.target=FIFATest()
+comment1.target=FIFATESTT()
 comment1.text=\r\n\ Default\ constructor\ for\ test\ class\ FIFATest\r\n
 comment2.params=
 comment2.target=void\ shouldListAllParticipants()
@@ -12,4 +12,12 @@ comment4.params=
 comment4.target=void\ shouldListAddedTeam()
 comment5.params=
 comment5.target=void\ shouldNotListPlayerWithBadData()
-numComments=6
+comment6.params=
+comment6.target=void\ shouldNotAddPlayerWithDuplicateName()
+comment7.params=
+comment7.target=void\ shouldNotAddPlayerWithNegativeMinutes()
+comment8.params=
+comment8.target=void\ shouldNotAddPlayerWithEmptyName()
+comment9.params=
+comment9.target=void\ shouldNotAddTeamWithNonNumericMinutes()
+numComments=10

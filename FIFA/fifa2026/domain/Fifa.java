@@ -61,21 +61,57 @@ public class Fifa{
      * Add a new player
     */
     public void addPlayer(String name, String minutes, String position, String value, String club) throws FifaException{
+        // Caso (iv): Campos vacíos
+        if (name == null || name.trim().isEmpty()) throw new FifaException(FifaException.EMPTY_FIELD);
+        if (minutes == null || minutes.trim().isEmpty()) throw new FifaException(FifaException.EMPTY_FIELD);
+        if (position == null || position.trim().isEmpty()) throw new FifaException(FifaException.EMPTY_FIELD);
+        if (value == null || value.trim().isEmpty()) throw new FifaException(FifaException.EMPTY_FIELD);
+        // Caso (i): Nombre duplicado
         if (consult(name) != null) throw new FifaException(FifaException.ALREADY_EXISTS);
-        Player np=new Player(name,Integer.parseInt(minutes),position.charAt(0),Integer.parseInt(value),club);
+        // Caso (ii): Valores no numéricos
+        int theMinutes;
+        int theValue;
+        try {
+            theMinutes = Integer.parseInt(minutes.trim());
+        } catch (NumberFormatException e) {
+            throw new FifaException(FifaException.WRONG_VALUE + " (minutos: '" + minutes + "')");
+        }
+        try {
+            theValue = Integer.parseInt(value.trim());
+        } catch (NumberFormatException e) {
+            throw new FifaException(FifaException.WRONG_VALUE + " (valor: '" + value + "')");
+        }
+        // Caso (iii): Valores negativos
+        if (theMinutes < 0) throw new FifaException(FifaException.WRONG_VALUE);
+        if (theValue < 0) throw new FifaException(FifaException.WRONG_VALUE);
+        Player np = new Player(name.trim(), theMinutes, position.trim().charAt(0), theValue, club);
         participants.add(np);
-        players.put(name.toUpperCase(),np); 
+        players.put(name.toUpperCase().trim(), np); 
     }
     
     /**
      * Add a new team
     */
     public void addTeam(String name, String minutes, String position, String manager, String uniform, String thePlayers) throws FifaException{ 
+        // Caso (iv): Campos vacíos
+        if (name == null || name.trim().isEmpty()) throw new FifaException(FifaException.EMPTY_FIELD);
+        if (minutes == null || minutes.trim().isEmpty()) throw new FifaException(FifaException.EMPTY_FIELD);
+        if (position == null || position.trim().isEmpty()) throw new FifaException(FifaException.EMPTY_FIELD);
+        // Caso (i): Nombre duplicado
         if (consult(name) != null) throw new FifaException(FifaException.ALREADY_EXISTS);
-        Team c = new Team(name,Integer.parseInt(minutes),position.charAt(0),manager, uniform);
+        // Caso (ii): Valores no numéricos
+        int theMinutes;
+        try {
+            theMinutes = Integer.parseInt(minutes.trim());
+        } catch (NumberFormatException e) {
+            throw new FifaException(FifaException.WRONG_VALUE + " (minutos: '" + minutes + "')");
+        }
+        // Caso (iii): Valores negativos
+        if (theMinutes < 0) throw new FifaException(FifaException.WRONG_VALUE);
+        Team c = new Team(name.trim(), theMinutes, position.trim().charAt(0), manager, uniform);
         String [] aPlayers= thePlayers.split("\n");
         for (String b : aPlayers){
-            c.addPlayer(players.get(b.toUpperCase()));
+            c.addPlayer(players.get(b.toUpperCase().trim()));
         }
         participants.add(c);
     }
@@ -88,7 +124,7 @@ public class Fifa{
     public ArrayList<Participant> select(String prefix){
         ArrayList <Participant> answers=new ArrayList<Participant>();
         prefix=prefix.toUpperCase();
-        for(int i=0;i<=participants.size();i++){
+        for(int i=0;i<participants.size();i++){
             if(participants.get(i).name().toUpperCase().startsWith(prefix)){
                 answers.add(participants.get(i));
             }   
