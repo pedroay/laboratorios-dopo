@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Troncal
+comment0.text=\r\n\ Representa\ una\ troncal\ del\ sistema\ que\ agrupa\ estaciones\ y\ tramos.\r\n
+comment1.params=nombre\ velocidadPromedio
+comment1.target=Troncal(java.lang.String,\ int)
+comment1.text=\r\n\ Constructor\ para\ la\ clase\ Troncal.\r\n
+comment2.params=
+comment2.target=java.lang.String\ getNombre()
+comment3.params=
+comment3.target=double\ getVelocidadPromedio()
+comment4.params=
+comment4.target=java.util.ArrayList\ getTramos()
+comment5.params=
+comment5.target=java.util.HashMap\ getEstaciones()
+comment6.params=estacion
+comment6.target=void\ addEstacion(Estacion)
+comment7.params=tramo
+comment7.target=void\ addTramo(Tramo)
+numComments=8

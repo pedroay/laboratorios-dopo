@@ -1,4 +1,4 @@
-package Domain;
+package dominio;
 
 /**
  * Obstáculo: representa una pared fija en el tablero.

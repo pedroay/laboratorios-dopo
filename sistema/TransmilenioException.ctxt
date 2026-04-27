@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=TransmilenioException
+comment0.text=\r\n\ Exception\ class\ for\ the\ Transmilenio\ system\ errors.\r\n
+comment1.params=message
+comment1.target=TransmilenioException(java.lang.String)
+numComments=2

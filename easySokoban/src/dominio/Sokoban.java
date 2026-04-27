@@ -1,4 +1,4 @@
-package Domain;
+package dominio;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,12 +21,18 @@ public class Sokoban {
         "# $ # .  #",
         "#   $ #  #",
         "#  @     #",
-        "#  .  $  #",
+        "#  .  $  #",   
         "#        #",
         "##########"
     };
     public Sokoban() {
         cajas = new ArrayList<>();
+        cargarNivel(NIVEL);
+        
+    }
+
+    public void reiniciar() {
+        cajas.clear();
         cargarNivel(NIVEL);
     }
 

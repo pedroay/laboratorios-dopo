@@ -1,4 +1,4 @@
-package Domain;
+package dominio;
 
 /**
  * Caja: objeto movible que el personaje puede empujar.

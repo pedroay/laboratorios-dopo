@@ -1,4 +1,4 @@
-package Domain;
+package dominio;
 
 /**
  * Clase abstracta base para todos los objetos del juego Sokoban.

@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Estacion
+comment0.text=\r\n\ Representa\ una\ estaci\u00F3n\ del\ sistema\ de\ transporte.\r\n
+comment1.params=nombre\ nivelDeOcupacion\ tiempoDeEspera
+comment1.target=Estacion(java.lang.String,\ java.lang.String,\ int)
+comment1.text=\r\n\ Constructor\ para\ la\ clase\ Estacion.\r\n
+comment2.params=
+comment2.target=int\ getTiempoEspera()
+comment2.text=\r\n\ Retorna\ el\ tiempo\ de\ espera\ en\ la\ estaci\u00F3n.\r\n\ @return\ tiempo\ de\ espera\ en\ minutos.\r\n\ @throws\ TransmilenioException-NO_WAIT_TIME\ si\ no\ tiene\ tiempo\ de\ espera.\r\n
+comment3.params=
+comment3.target=java.lang.String\ getNombre()
+comment4.params=
+comment4.target=java.lang.String\ getNivelDeOcupacion()
+comment5.params=nivelDeOcupacion
+comment5.target=void\ setNivelDeOcupacion(java.lang.String)
+comment6.params=tiempoDeEspera
+comment6.target=void\ setTiempoDeEspera(int)
+comment7.params=
+comment7.target=java.util.ArrayList\ getRutas()
+comment8.params=ruta
+comment8.target=void\ addRuta(Ruta)
+numComments=9

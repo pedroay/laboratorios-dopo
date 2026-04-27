@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Ruta
+comment0.text=\r\n\ Representa\ una\ ruta\ de\ transporte\ que\ pasa\ por\ varias\ estaciones.\r\n
+comment1.params=nombre
+comment1.target=Ruta(java.lang.String)
+comment1.text=\r\n\ Constructor\ para\ la\ clase\ Ruta.\r\n
+comment2.params=
+comment2.target=java.lang.String\ getNombre()
+comment3.params=
+comment3.target=java.util.ArrayList\ getParadas()
+comment4.params=estacion
+comment4.target=void\ addParada(Estacion)
+comment5.params=otra
+comment5.target=int\ compareTo(Ruta)
+comment6.params=o
+comment6.target=boolean\ equals(java.lang.Object)
+comment7.params=
+comment7.target=int\ hashCode()
+comment8.params=estacion1\ estacion2
+comment8.target=int\ numParadas(java.lang.String,\ java.lang.String)
+comment8.text=\r\n\ Calcula\ el\ n\u00FAmero\ de\ paradas\ entre\ dos\ estaciones\ dadas\ sus\ nombres.\r\n\ \r\n\ @param\ estacion1\ Nombre\ de\ la\ primera\ estaci\u00F3n.\r\n\ @param\ estacion2\ Nombre\ de\ la\ segunda\ estaci\u00F3n.\r\n\ @return\ El\ n\u00FAmero\ de\ paradas\ entre\ las\ dos\ estaciones\ (distancia\ absoluta\ entre\ sus\ \u00EDndices).\r\n\ @throws\ TransmilenioException\ Si\ alguna\ de\ las\ estaciones\ no\ se\ encuentra\ en\ esta\ ruta.\r\n
+numComments=9

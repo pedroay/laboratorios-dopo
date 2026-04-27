@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Tramo
+comment0.text=\r\n\ Representa\ un\ tramo\ entre\ dos\ estaciones\ con\ una\ distancia\ espec\u00EDfica.\r\n
+comment1.params=distancia\ puntoInicio\ puntoFin
+comment1.target=Tramo(int,\ Estacion,\ Estacion)
+comment1.text=\r\n\ Constructor\ para\ la\ clase\ Tramo.\r\n
+comment2.params=
+comment2.target=double\ getDistancia()
+comment3.params=
+comment3.target=Estacion\ getPuntoInicio()
+comment4.params=
+comment4.target=Estacion\ getPuntoFin()
+numComments=5

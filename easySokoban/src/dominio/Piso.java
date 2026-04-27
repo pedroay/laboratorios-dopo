@@ -1,4 +1,4 @@
-package Domain;
+package dominio;
 
 public class Piso extends Objeto {
 	 
